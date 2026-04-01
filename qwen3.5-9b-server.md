@@ -28,8 +28,8 @@ makes the KV cache extremely small relative to model size.
 Managed via systemd unit `llama-server-qwen3.5-9b.service`:
 
 ```bash
-/home/arman/ai/llama.cpp/llama-server \
-    -m /media/arman/BlueSSD/AI/ggufs/Qwen3.5-9B-Q4_K_M.gguf \
+/opt/llama.cpp/llama-server \
+    -m /models/Qwen3.5-9B-Q4_K_M.gguf \
     --alias Qwen3.5-9B \
     --host 0.0.0.0 \
     --port 8001 \

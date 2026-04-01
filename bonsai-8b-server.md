@@ -30,15 +30,15 @@ of 128. Dequantization happens inline on the GPU — no FP16 materialization.
 
 The Q1_0_g128 format is **not supported by upstream llama.cpp**. This deployment uses
 the [PrismML fork](https://github.com/PrismML-Eng/llama.cpp) which includes the
-custom dequantization kernels. The fork is checked out at `~/ai/llama.cpp-prismml/`.
+custom dequantization kernels. The fork is checked out at `/opt/llama.cpp-prismml/`.
 
 ## Server Command
 
 Managed via systemd unit `llama-server-bonsai-8b.service`:
 
 ```bash
-/home/arman/ai/llama.cpp-prismml/build/bin/llama-server \
-    -m /media/arman/BlueSSD/AI/ggufs/Bonsai-8B.gguf \
+/opt/llama.cpp-prismml/build/bin/llama-server \
+    -m /models/Bonsai-8B.gguf \
     --alias Bonsai-8B \
     --host 0.0.0.0 \
     --port 8001 \

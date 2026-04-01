@@ -30,8 +30,8 @@ sliding window attention.
 Managed via systemd unit `llama-server-qwen3.5-27b.service`:
 
 ```bash
-/home/arman/ai/llama.cpp/llama-server \
-    -m /media/arman/BlueSSD/AI/ggufs/Qwen3.5-27B-Q4_K_M.gguf \
+/opt/llama.cpp/llama-server \
+    -m /models/Qwen3.5-27B-Q4_K_M.gguf \
     --alias Qwen3.5-27B \
     --host 0.0.0.0 \
     --port 8001 \

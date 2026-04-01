@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=arman
-WorkingDirectory=/home/arman/ai/llama.cpp-prismml
+User=user
+WorkingDirectory=/opt/llama.cpp-prismml
 
-ExecStart=/home/arman/ai/llama.cpp-prismml/build/bin/llama-server \
-    -m /media/arman/BlueSSD/AI/ggufs/Bonsai-8B.gguf \
+ExecStart=/opt/llama.cpp-prismml/build/bin/llama-server \
+    -m /models/Bonsai-8B.gguf \
     --alias Bonsai-8B \
     --host 0.0.0.0 \
     --port 8001 \
