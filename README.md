@@ -145,7 +145,7 @@ The hardest questions across all models are logic constraint puzzles (card order
 Bonsai-8B fits in **1.1 GiB** — 14x smaller than Qwen3.5-27B (15.6 GiB), 5x smaller than Qwen3.5-9B (5.3 GiB), and half the size of Qwen3.5-4B (2.5 GiB). It's the fastest model tested at 46.5 tok/s and finishes the full 98-question benchmark in under 2 minutes. But those gains come at a real cost.
 
 **Where Bonsai holds up well:**
-- **Coding (100%)** — perfect score, matching or beating every Qwen model. Structured code generation is remarkably resilient to 1-bit quantization.
+- **Coding (100%)** — perfect score, matching or beating every Qwen model. That said, 100% on 14 questions doesn't make it a coding beast — it would need a dedicated coding benchmark to draw real conclusions. But for now, it's looking good.
 - **General Knowledge (92.9%)** — only 7 points behind the 27B. Factual recall survives aggressive compression.
 - **History (96.4%)** — near-perfect, on par with the Qwen family.
 
