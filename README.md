@@ -189,4 +189,4 @@ Requires passwordless sudo for `systemctl start/stop llama-server-*` (see `/etc/
 
 ## Author
 
-Arman Jafarnezhad
+Arman Jafarnezhad w/ Claude Opus 4.6 Max Effort
