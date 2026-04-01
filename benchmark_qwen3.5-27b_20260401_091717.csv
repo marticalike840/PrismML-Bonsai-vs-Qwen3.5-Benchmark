@@ -1,0 +1,286 @@
+question_id,category,difficulty,prompt_preview,response_preview,score_mean,score_std,run_scores,prompt_tokens,completion_tokens,prompt_ms,predicted_ms,prompt_tok_s,gen_tok_s,ttft_ms,wall_time_ms,finish_reason,full_response,error
+1,general_knowledge,easy,What is the chemical symbol for gold? A) Au B) Ag C) Fe D) Gd Answer with just t,A,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,575.605,143.677,107.71275440623344,13.920112474508795,608,749,stop,A,
+2,general_knowledge,easy,What gas do plants absorb from the atmosphere for photosynthesis? Answer in one ,Carbon dioxide,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,518.921,286.024,94.42670464290325,10.488630324727996,573,858,stop,Carbon dioxide,
+3,general_knowledge,medium,"What is the tallest mountain in the world, and what is its height in meters?","The tallest mountain in the world above sea level is **Mount Everest**, with a h",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.976,5469.317,91.26638911327906,7.496365633953929,587,7191,stop,"The tallest mountain in the world above sea level is **Mount Everest**, with a height of **8,848.86 meters** (29,031.7 feet).",
+4,general_knowledge,medium,Name the four fundamental forces of nature.,The four fundamental forces of nature are:  1.  **Gravitational Force** 2.  **El,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,500.556,6286.248,75.91558187295728,7.476637892746199,597,6836,stop,"The four fundamental forces of nature are:
+
+1.  **Gravitational Force**
+2.  **Electromagnetic Force**
+3.  **Strong Nuclear Force**
+4.  **Weak Nuclear Force**",
+5,general_knowledge,medium,Which organ in the human body produces insulin? Answer with just the organ name.,Pancreas,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.136,421.413,89.47049029828683,9.491876140508243,570,991,stop,Pancreas,
+6,general_knowledge,hard,What phenomenon explains why the sky appears blue during the day? Name the type ,The phenomenon is **Rayleigh scattering**.  This occurs because blue light has a,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,568.25,14605.839,103.82754069511658,7.394303059208034,694,16753,stop,"The phenomenon is **Rayleigh scattering**.
+
+This occurs because blue light has a shorter wavelength than red light. Rayleigh scattering is inversely proportional to the fourth power of the wavelength ($\propto 1/\lambda^4$), meaning shorter wavelengths (blue/violet) are scattered by atmospheric gas molecules much more efficiently than longer wavelengths (red). While violet light is scattered even more than blue, the human eye is more sensitive to blue, and the sun emits more blue light than violet, resulting in the sky appearing blue.",
+7,general_knowledge,hard,"What is the Haber-Bosch process, and why is it significant?",The **Haber-Bosch process** is an industrial method for synthesizing ammonia ($N,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,513.211,33868.704,87.68323360177392,7.351919931745838,627,32590,stop,"The **Haber-Bosch process** is an industrial method for synthesizing ammonia ($NH_3$) by reacting nitrogen ($N_2$) from the air with hydrogen ($H_2$), typically derived from natural gas. This reaction occurs under high pressure (150–250 atm) and temperature (400–500°C) using an iron catalyst.
+
+**Significance:**
+*   **Food Security:** It enables the mass production of nitrogen-based fertilizers. Before this process, agriculture was limited by natural soil nitrogen, which could only support roughly 2–4 billion people. Today, it is estimated that **50% of the nitrogen in the human body** and the food supply comes from this process, supporting over half of the global population.
+*   **Industrial Impact:** It revolutionized agriculture, turning it from a subsistence activity into an industrial one, and also provides a key feedstock for explosives and other chemicals.
+*   **Historical Context:** Developed by Fritz Haber and Carl Bosch in the early 20th century, it is considered one of the most important inventions in human history, fundamentally altering the trajectory of global demographics and civilization.",
+8,general_knowledge,hard,"What is the Chandrasekhar limit, and what is its approximate value in solar mass",The **Chandrasekhar limit** is the maximum mass (approximately **1.4 solar masse,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,518.277,9833.961,94.5440372619275,7.423254983419194,625,13912,stop,"The **Chandrasekhar limit** is the maximum mass (approximately **1.4 solar masses**) that a stable white dwarf star can possess.
+
+If a white dwarf exceeds this limit, electron degeneracy pressure can no longer support the star against gravitational collapse, leading to a Type Ia supernova or the formation of a neutron star or black hole.",
+9,math,easy,What is 247 multiplied by 83? Give only the number.,20501,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,516.484,694.658,90.99991480859039,8.637343844021085,575,1268,stop,20501,
+10,math,easy,What is 15% of 240? Give only the number.,36,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,515.658,285.36,91.14568182787816,10.513036164844408,576,861,stop,36,
+11,math,medium,Solve for x: 3x + 7 = 34. Give only the value of x.,9,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,562.123,143.602,94.28541440218599,13.927382626982912,621,764,stop,9,
+12,math,medium,"A store offers a 20% discount on a $150 item, then an additional 10% off the alr",108,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,637.198,422.372,114.56407584455695,9.470324737435247,438,859,stop,108,
+13,math,medium,"What is the sum of the interior angles of a hexagon, in degrees? Give only the n",720,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,521.822,423.594,97.73447650731475,9.443004386275538,621,1043,stop,720,
+14,math,hard,"What is C(10,3), that is, '10 choose 3'? Give only the number.",120,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,561.311,422.065,96.20335250868057,9.477213225451056,615,1036,stop,120,
+15,math,hard,A car travels the first half of a 240 km journey at 40 km/h and the second half ,48,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,643.747,285.62,122.7190184963969,10.503466143827463,436,721,stop,48,
+16,math,hard,What is the definite integral of x² from 0 to 3? Give only the number.,9,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,520.394,145.064,96.08104628416162,13.787018143715878,620,763,stop,9,
+17,coding,easy,Write a Python function `fizzbuzz(n)` that takes an integer n and returns a list,"```python def fizzbuzz(n):     result = []     for i in range(1, n + 1):        ",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,741.698,13650.366,145.61182583747024,7.39906900664788,469,14121,stop,"```python
+def fizzbuzz(n):
+    result = []
+    for i in range(1, n + 1):
+        if i % 15 == 0:
+            result.append(""FizzBuzz"")
+        elif i % 3 == 0:
+            result.append(""Fizz"")
+        elif i % 5 == 0:
+            result.append(""Buzz"")
+        else:
+            result.append(str(i))
+    return result
+```",
+18,coding,easy,"Write a Python function `max_of_three(a, b, c)` that returns the largest of thre","```python def max_of_three(a, b, c):     if a >= b and a >= c:         return a ",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,612.415,7240.728,111.03581721545031,7.457813634209157,451,7691,stop,"```python
+def max_of_three(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+```",
+19,coding,medium,Write a Python function `is_palindrome(s)` that returns True if the string is a ,```python def is_palindrome(s):     cleaned = ''.join(char.lower() for char in s,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,609.238,5196.585,105.04925825375304,7.504928717609738,448,6007,stop,"```python
+def is_palindrome(s):
+    cleaned = ''.join(char.lower() for char in s if char.isalnum())
+    return cleaned == cleaned[::-1]
+```",
+20,coding,medium,"Write a Python function `two_sum(nums, target)` that takes a list of integers an","```python def two_sum(nums, target):     num_to_index = {}     for i, num in enu",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,698.322,11336.698,127.44836909047689,7.409564936809643,477,10538,stop,"```python
+def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i
+    return []  # This line should not be reached given the problem constraints
+```",
+21,coding,medium,The following Python function is supposed to merge two sorted lists into one sor,"```python def merge_sorted(a, b):     result = []     i = j = 0     while i < le",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1008.263,13241.741,146.78709820751132,7.4008395119644765,580,13824,stop,"```python
+def merge_sorted(a, b):
+    result = []
+    i = j = 0
+    while i < len(a) and j < len(b):
+        if a[i] <= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    result.extend(a[i:])
+    result.extend(b[j:])
+    return result
+```",
+22,coding,hard,Write a Python function `flatten(lst)` that takes an arbitrarily nested list of ,```python def flatten(lst):     result = []     for item in lst:         if isin,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,751.575,6970.466,137.0455377041546,7.460046430181282,495,7465,stop,"```python
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+```",
+23,coding,hard,"Write a Python function `group_by_key(pairs)` that takes a list of (key, value) ",```python from collections import defaultdict  def group_by_key(pairs):     resu,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,805.296,6425.783,156.46420694999105,7.469906780232074,514,6941,stop,"```python
+from collections import defaultdict
+
+def group_by_key(pairs):
+    result = defaultdict(list)
+    for key, value in pairs:
+        result[key].append(value)
+    return dict(result)
+```",
+24,coding,hard,Write a Python function `topological_sort(graph)` that takes a directed acyclic ,```python def topological_sort(graph):     in_degree = {node: 0 for node in grap,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1013.877,24626.91,144.9880015031409,7.3496837402662365,678,26493,stop,"```python
+def topological_sort(graph):
+    in_degree = {node: 0 for node in graph}
+    for node in graph:
+        for dependent in graph[node]:
+            if dependent not in in_degree:
+                in_degree[dependent] = 0
+            in_degree[dependent] += 1
+
+    queue = [node for node in in_degree if in_degree[node] == 0]
+    result = []
+
+    while queue:
+        node = queue.pop(0)
+        result.append(node)
+        for dependent in graph.get(node, []):
+            in_degree[dependent] -= 1
+            if in_degree[dependent] == 0:
+                queue.append(dependent)
+
+    if len(result) != len(in_degree):
+        raise ValueError(""Graph contains a cycle"")
+
+    return result
+```",
+25,history,easy,In what year did World War II end? A) 1943 B) 1944 C) 1945 D) 1946 Answer with j,C,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,655.756,143.374,118.9466813875893,13.949530598295368,462,605,stop,C,
+26,history,easy,What ancient civilization built the pyramids at Giza? Answer in one or two words,Ancient Egyptians,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,517.474,429.696,92.75828350796368,9.30890676198987,609,1034,stop,Ancient Egyptians,
+27,history,medium,"Who was the first President of the United States, and in what year did they take",George Washington was the first President of the United States. He took office o,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,517.766,3561.678,94.63734582803815,7.5806965143957425,573,4633,stop,"George Washington was the first President of the United States. He took office on April 30, 1789.",
+28,history,medium,"What event is commonly considered the start of the French Revolution, and in wha",The event commonly considered the start of the French Revolution is the **Stormi,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,520.007,4790.307,96.15255179257203,7.515175958451097,588,5332,stop,"The event commonly considered the start of the French Revolution is the **Storming of the Bastille**, which occurred on **July 14, 1789**.",
+29,history,medium,"Who invented the printing press in Europe, and in approximately what year?",Johannes Gutenberg invented the printing press in Europe around **1440**.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,507.805,2331.924,86.64743356209569,7.718947958852862,576,2997,stop,Johannes Gutenberg invented the printing press in Europe around **1440**.,
+30,history,hard,Name the three countries that formed the Triple Entente before World War I.,The three countries that formed the Triple Entente before World War I were:  1. ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,513.611,5607.501,87.61494594157836,7.489967456091403,570,6042,stop,"The three countries that formed the Triple Entente before World War I were:
+
+1.  **France**
+2.  **Great Britain** (United Kingdom)
+3.  **Russia**",
+31,history,hard,What was the significance of the Treaty of Westphalia (1648)?,The Treaty of Westphalia (1648) is significant for three primary reasons:  1.  *,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,517.08,22255.542,90.89502591475207,7.3689510684574655,638,22940,stop,"The Treaty of Westphalia (1648) is significant for three primary reasons:
+
+1.  **Establishment of State Sovereignty**: It introduced the principle that states have exclusive authority over their own territory and domestic affairs, laying the foundation for the modern international system of sovereign nation-states.
+2.  **End of Religious Wars**: It concluded the Thirty Years' War in Europe and the Eighty Years' War, ending decades of conflict driven by religious strife between Catholics and Protestants.
+3.  **Religious Toleration**: It formalized the right of rulers to determine the religion of their own states (*cuius regio, eius religio*) while granting legal recognition and protection to Calvinists and other Protestant minorities, effectively ending the era of large-scale religious wars in Europe.",
+32,history,hard,What was the Silk Road? Which two regions did it primarily connect? Name one maj,The Silk Road was an ancient network of trade routes that facilitated the exchan,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,563.385,11339.272,99.39916753197193,7.4078829752033455,672,14652,stop,"The Silk Road was an ancient network of trade routes that facilitated the exchange of goods, ideas, and culture across Eurasia. It primarily connected **East Asia** (specifically China) and **Europe** (specifically the Mediterranean region). One major commodity traded on it besides silk was **spices** (such as pepper, cinnamon, or cloves); other significant goods included porcelain, tea, and precious metals.",
+33,logical_reasoning,easy,All cats are animals. Some animals are pets. Can we conclude that all cats are p,No,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,564.562,143.522,97.42065530446612,13.935145831301126,624,767,stop,No,
+34,logical_reasoning,easy,"What is the next number in the sequence: 2, 6, 18, 54, ? Answer with just the nu",162,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,567.672,423.748,105.69483786411871,9.439572576153752,634,1056,stop,162,
+35,logical_reasoning,medium,"If it rains, the ground gets wet. The ground is wet. Can we conclude that it rai",No,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,567.149,143.802,102.26589485302804,13.908012405947067,621,764,stop,No,
+36,logical_reasoning,medium,"If A > B and B > C, and C = 5, what is the minimum possible integer value of A? ",7,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,572.547,143.694,106.54147170450635,13.918465628349132,628,771,stop,7,
+37,logical_reasoning,medium,"Alice, Bob, and Charlie each own exactly one pet: a cat, a dog, and a fish (one ","Alice=fish, Bob=cat, Charlie=dog",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,794.834,1519.27,159.78179091483253,7.898530215169128,479,1994,stop,"Alice=fish, Bob=cat, Charlie=dog",
+38,logical_reasoning,hard,"Five houses stand in a row, numbered 1 to 5 from left to right. Each house is a ","Yellow, Red, Green, Blue, White",0.2000,0.0000,"[0.2, 0.2, 0.2]",0,0,1084.525,1246.136,152.14033793596272,8.024806281176373,610,1852,stop,"Yellow, Red, Green, Blue, White",
+39,logical_reasoning,hard,All roses are flowers. Some flowers fade quickly. Can we conclude that some rose,No,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,565.28,143.417,97.29691480328333,13.945348180480696,644,787,stop,No,
+40,logical_reasoning,hard,A says 'B always lies.' B says 'A and I both tell the truth.' If exactly one of ,A,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,633.683,143.529,110.4653273008744,13.934466205435836,425,568,stop,A,
+41,language_understanding,easy,What is the sentiment of the following text? 'I just watched that movie and it w,Negative,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,640.444,143.906,117.1062575338359,13.897961169096494,461,605,stop,Negative,
+42,language_understanding,easy,Complete the analogy: Painter is to Canvas as Author is to ___. Answer with one ,Paper,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,520.669,143.862,94.10969349049013,13.902211841904048,598,741,stop,Paper,
+43,language_understanding,medium,Read the following passage and provide a one-sentence summary:  'The Industrial ,"Beginning in late 18th-century Britain, the Industrial Revolution transformed hu",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,992.777,5888.032,143.03312828560692,7.472785473991989,547,6476,stop,"Beginning in late 18th-century Britain, the Industrial Revolution transformed human history by shifting economies from agrarian to industrial through technological innovations, resulting in urbanization and economic growth alongside enduring social inequalities and environmental challenges.",
+44,language_understanding,medium,Which meaning of the word 'bank' is used in this sentence? 'We sat on the bank a,B,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,693.607,143.467,136.96516903664468,13.940488056486856,476,619,stop,B,
+45,language_understanding,medium,What is the antonym of 'ephemeral'? Answer with one word.,Permanent,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,524.503,143.994,87.70207224744186,13.889467616706252,593,736,stop,Permanent,
+46,language_understanding,hard,A colleague asks you: 'Do you think John would make a good manager?' You reply: ,You are implying that John is **unlikely** to be a good manager.  By responding ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,637.203,10395.088,116.13253547142747,7.4073446997274095,530,11603,stop,"You are implying that John is **unlikely** to be a good manager.
+
+By responding with facts about punctuality and organization instead of addressing his leadership, decision-making, or people skills, you are using **irrelevant evidence** to suggest he lacks the necessary qualifications for the role. It is a polite way of saying his strengths are limited to basic administrative habits, not management.",
+47,language_understanding,hard,Identify the literary device in this sentence: 'The wind whispered through the t,Personification,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,521.823,285.42,99.6506478250288,10.510826150935463,615,901,stop,Personification,
+48,language_understanding,hard,Rewrite the following sentence from passive voice to active voice: 'The cake was,The children ate the cake.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,520.42,832.493,97.99777103109028,8.408479110334861,566,1397,stop,The children ate the cake.,
+49,persian,easy,پایتخت ایران کجاست؟ فقط نام شهر را بنویسید.,تهران,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,516.566,285.245,90.98546942694641,10.517274623569213,581,866,stop,تهران,
+50,persian,easy,معنی کلمه «آسمان» به انگلیسی چیست؟ فقط یک کلمه بنویسید.,Sky,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,562.351,143.726,99.58193370332764,13.91536673949042,620,763,stop,Sky,
+51,persian,medium,جمله زیر را به انگلیسی ترجمه کنید: «من یک دانشجو هستم.»,I am a student.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,519.202,695.746,96.30163212006117,8.623836860003507,584,1279,stop,I am a student.,
+52,persian,medium,کدام فعل در این جمله استفاده شده است؟ «بچه‌ها در پارک بازی می‌کنند.» فقط فعل را ,بازی می‌کنند,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,572.445,831.823,108.30734830420388,8.41525180236661,628,1460,stop,بازی می‌کنند,
+53,persian,hard,این ضرب‌المثل فارسی «تا تنور داغ است نان را بچسبان» معادل کدام ضرب‌المثل انگلیسی,Strike while the iron is hot.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,642.909,968.423,119.76811648304815,8.260852953719604,445,1412,stop,Strike while the iron is hot.,
+54,persian,medium,جمله زیر را به فارسی ترجمه کنید: «The sun rises in the east.»,خورشید در مشرق طلوع می‌کند.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,519.763,1787.803,94.27373629904399,7.830840422574522,612,2352,stop,خورشید در مشرق طلوع می‌کند.,
+55,persian,hard,شعر زیر از کیست؟ «بنی‌آدم اعضای یکدیگرند / که در آفرینش ز یک گوهرند» فقط نام شاع,سعدی,0.6667,0.5774,"[1.0, 0.0, 1.0]",0,0,636.825,421.921,111.4905978879598,9.480447761547778,443,1001,stop,سعدی,
+56,persian,hard,در ادبیات فارسی، «شاهنامه» اثر کیست و موضوع اصلی آن چیست؟,«شاهنامه» اثر **فردوسی** (ابوالقاسم فردوسی) است و موضوع اصلی آن **تاریخ اساطیری ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,535.352,7385.941,95.26442415457494,7.44657992800105,635,7609,stop,«شاهنامه» اثر **فردوسی** (ابوالقاسم فردوسی) است و موضوع اصلی آن **تاریخ اساطیری و حماسی ایران** از روزگاران باستان تا پایان سلسله ساسانیان است.,
+57,general_knowledge,easy,What is the SI unit of electric current? Answer with one word.,Ampere,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,507.163,285.204,86.75711753420498,10.518786552783272,569,854,stop,Ampere,
+58,general_knowledge,easy,Which metal is liquid at standard room temperature? Answer with one word.,Mercury,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,507.003,285.827,86.78449634420309,10.495859383473219,561,799,stop,Mercury,
+59,general_knowledge,medium,What mineral ore is the primary commercial source of aluminum? Answer with one w,Bauxite,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.39,422.641,89.42631077587045,9.464297122143853,578,999,stop,Bauxite,
+60,general_knowledge,medium,In which layer of Earth's atmosphere is most ozone found? Answer with one word.,Stratosphere,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.909,422.176,91.27826470308345,9.474721443189571,561,983,stop,Stratosphere,
+61,general_knowledge,hard,What scientific law states that pressure applied to a confined fluid is transmit,Pascal's Law,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,566.417,558.884,100.6325728217903,8.946400326364683,630,1188,stop,Pascal's Law,
+62,general_knowledge,hard,What term describes the symbiotic association between fungi and plant roots? Ans,Mycorrhiza,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.886,559.13,93.22451960239742,8.942464185430937,572,1130,stop,Mycorrhiza,
+63,math,easy,What is (18² − 17²)? Give only the number.,35,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,515.599,285.236,91.15611162938639,10.517606473236198,572,857,stop,35,
+64,math,easy,A recipe uses 3 cups of flour for 8 muffins. How many cups are needed for 20 muf,7.5,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,571.625,422.648,106.71331729717909,9.464140372129998,635,1057,stop,7.5,
+65,math,medium,Solve for x: 2(x − 3) = 3x + 5. Give only the value of x.,-11,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,566.511,422.54,100.6158750668566,9.466559378993704,622,1044,stop,-11,
+66,math,medium,"At 3:40, what is the smaller angle between the hour hand and the minute hand of ",130,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,571.962,422.427,106.65044181256796,9.469091701051305,635,1057,stop,130,
+67,math,hard,"A tank is 3/5 full. After adding 24 liters, it becomes 3/4 full. What is the tan",160,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,634.189,422.633,108.80037339026694,9.464476271374929,444,866,stop,160,
+68,math,hard,Find the sum of the infinite geometric series: 12 − 6 + 3 − 1.5 + … Give only th,8,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,578.799,143.755,103.66292961805394,13.91255956314563,654,797,stop,8,
+69,coding,easy,Write a Python function `unique_preserve_order(items)` that returns a new list c,```python def unique_preserve_order(items):     seen = set()     result = []    ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,687.322,7385.695,129.4880710933158,7.446827955933734,452,7834,stop,"```python
+def unique_preserve_order(items):
+    seen = set()
+    result = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+```",
+70,coding,easy,"Write a Python function `chunk_string(s, n)` that splits a string into consecuti","```python def chunk_string(s, n):     return [s[i:i + n] for i in range(0, len(s",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,659.848,4651.911,127.30204531952815,7.523789685572231,470,5031,stop,"```python
+def chunk_string(s, n):
+    return [s[i:i + n] for i in range(0, len(s), n)]
+```",
+71,coding,medium,Write a Python function `rotate_matrix_clockwise(M)` that returns a new matrix r,```python def rotate_matrix_clockwise(M):     if not M or not M[0]:         retu,0.6667,0.5774,"[1.0, 0.0, 1.0]",0,0,698.725,8610.341,125.94368313714264,7.432922807586831,485,8686,stop,"```python
+def rotate_matrix_clockwise(M):
+    if not M or not M[0]:
+        return []
+    return [[M[i][j] for i in range(len(M) - 1, -1, -1)] for j in range(len(M[0]))]
+```",
+72,coding,medium,"Write a Python function `decode_ranges(spec)` that takes a string like ""1-3,5,8-","```python def decode_ranges(spec):     result = []     for part in spec.split(',",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,706.688,9703.91,125.9395942763992,7.419689589041943,486,10190,stop,"```python
+def decode_ranges(spec):
+    result = []
+    for part in spec.split(','):
+        if '-' in part:
+            start, end = map(int, part.split('-'))
+            result.extend(range(start, end + 1))
+        else:
+            result.append(int(part))
+    return result
+```",
+73,coding,hard,Write a Python function `nest_by_dots(flat)` that converts a dictionary with dot,"```python def nest_by_dots(flat):     result = {}     for key, value in flat.ite",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,764.268,11891.658,137.38636185212516,7.400145547408108,504,13260,stop,"```python
+def nest_by_dots(flat):
+    result = {}
+    for key, value in flat.items():
+        parts = key.split('.')
+        current = result
+        for part in parts[:-1]:
+            if part not in current:
+                current[part] = {}
+            current = current[part]
+        current[parts[-1]] = value
+    return result
+```",
+74,coding,hard,"Write a Python function `interval_gaps(intervals, start, end)` where `intervals`","```python def interval_gaps(intervals, start, end):     if not intervals or star",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1005.263,33938.32,133.2984502563011,7.336839301415038,693,33491,stop,"```python
+def interval_gaps(intervals, start, end):
+    if not intervals or start >= end:
+        return [[start, end]] if start < end else []
+    
+    # Sort intervals by start time
+    sorted_intervals = sorted(intervals)
+    
+    # Merge overlapping intervals
+    merged = []
+    if sorted_intervals:
+        current_start, current_end = sorted_intervals[0]
+        for next_start, next_end in sorted_intervals[1:]:
+            if next_start < current_end:
+                current_end = max(current_end, next_end)
+            else:
+                merged.append([current_start, current_end])
+                current_start, current_end = next_start, next_end
+        merged.append([current_start, current_end])
+    
+    # Find gaps
+    gaps = []
+    current_pos = start
+    
+    for interval_start, interval_end in merged:
+        if interval_start > current_pos:
+            gaps.append([current_pos, interval_start])
+        current_pos = max(current_pos, interval_end)
+    
+    if current_pos < end:
+        gaps.append([current_pos, end])
+    
+    return gaps
+```",
+75,history,easy,Which empire built Machu Picchu? Answer in one or two words.,Inca Empire,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.997,428.101,87.37914978145504,9.343589480052604,603,1027,stop,Inca Empire,
+76,history,easy,What structure's fall in 1989 became a symbol of the end of the division between,Berlin Wall,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,573.236,285.786,108.15789657313915,10.497365161344502,639,924,stop,Berlin Wall,
+77,history,medium,What document signed in 1215 is famous for limiting the power of the English kin,Magna Carta,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,566.672,422.626,100.58728859022503,9.464633032515748,626,1047,stop,Magna Carta,
+78,history,medium,Which Roman emperor established Constantinople as an imperial capital? Answer wi,Constantine I (Constantine the Great),1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,515.203,1242.018,93.16715935272117,8.051413103513797,572,1357,stop,Constantine I (Constantine the Great),
+79,history,hard,Which treaty signed in 1713 helped end the War of the Spanish Succession? Answer,The Treaty of Utrecht,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,562.58,559.0,99.54139855664972,8.944543828264758,617,1176,stop,The Treaty of Utrecht,
+80,history,hard,Which Chinese dynasty began ruling after the fall of the Yuan dynasty in 1368? A,Ming Dynasty,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,563.458,422.487,99.38628966134122,9.467746936592132,618,947,stop,Ming Dynasty,
+81,logical_reasoning,easy,All metals conduct electricity. Copper is a metal. Can we conclude that copper c,Yes,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,561.661,143.685,96.14340322721358,13.919337439537879,614,756,stop,Yes,
+82,logical_reasoning,easy,"What is the next number in the sequence: 1, 2, 4, 7, 11, ? Answer with just the ",16,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,572.4,286.173,108.31586303284418,10.48316927173423,633,919,stop,16,
+83,logical_reasoning,medium,No musicians dislike rhythm. Some drummers are musicians. Can we conclude that s,Yes,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,567.167,143.629,104.0257983980027,13.924764497420439,624,767,stop,Yes,
+84,logical_reasoning,medium,"Nadia, Omid, and Parisa each have exactly one different badge color: red, blue, ","Nadia=Green, Omid=Blue, Parisa=Red",0.7778,0.3849,"[1.0, 0.3333, 1.0]",0,0,984.853,1926.622,135.0455347143178,7.785647625740804,550,2474,stop,"Nadia=Green, Omid=Blue, Parisa=Red",
+85,logical_reasoning,hard,"Ari, Bina, Cyrus, and Darya finish a race in positions 1 through 4, with no ties","Darya, Ari, Cyrus, Bina",0.3333,0.1443,"[0.5, 0.25, 0.25]",0,0,803.225,1241.003,153.13268386815648,8.057998248191181,520,1942,stop,"Darya, Ari, Cyrus, Bina",
+86,logical_reasoning,hard,"Four cards labeled A, B, C, and D are placed in a row from left to right. Clues:","D, B, A, C",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,786.18,971.565,148.82088071434023,8.234137705660455,510,1478,stop,"D, B, A, C",
+87,language_understanding,easy,"Which meaning of the word ""meticulous"" fits this sentence best? ""The archivist k",A,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,653.449,143.351,122.42730496182566,13.95176873548144,464,607,stop,A,
+88,language_understanding,easy,"What is the tone of this sentence? ""Wonderful—another software update right befo",Sarcastic,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,604.972,423.819,110.7489272230781,9.437991217949172,453,875,stop,Sarcastic,
+89,language_understanding,medium,"What does this sentence presuppose? ""Leila stopped commuting by car last month.""",The sentence presupposes that Leila used to commute by car before last month.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,565.707,2197.48,97.22347434272511,7.7361341172615905,644,2841,stop,The sentence presupposes that Leila used to commute by car before last month.,
+90,language_understanding,medium,"Read the two statements: Statement 1: ""Every lamp in the hallway was switched of",Contradiction,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,687.35,421.722,133.84738488397468,9.484921346289736,440,862,stop,Contradiction,
+91,language_understanding,hard,"A hiring manager asks, ""Would Samira be good in a client-facing role?"" You reply",You are implying that Samira would likely **not** be good in a client-facing rol,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,635.333,6023.764,110.17844185647527,7.4704121874628555,465,5667,stop,"You are implying that Samira would likely **not** be good in a client-facing role, as her strength in formatting reports is an administrative skill that does not demonstrate the necessary interpersonal or communication abilities for interacting with clients.",
+92,language_understanding,hard,"In the sentence ""Even Farid passed the qualifying exam,"" what does the word ""eve","The word ""even"" implies that Farid was the least likely person to pass the exam,",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,569.262,3699.046,103.64296229152835,7.569519276051176,654,4715,stop,"The word ""even"" implies that Farid was the least likely person to pass the exam, suggesting his success was surprising or unexpected.",
+93,persian,easy,متضادِ «کوتاه» چیست؟ فقط یک کلمه بنویسید.,بلند,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,521.022,285.23,97.884542303396,10.517827717981978,571,856,stop,بلند,
+94,persian,easy,جملهٔ «The window is open.» را به فارسی ترجمه کنید.,پنجره باز است.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,514.923,968.542,93.2178209169138,8.259837983277958,566,1534,stop,پنجره باز است.,
+95,persian,medium,در جملهٔ «کتابِ جدیدِ معلم روی میز است»، واژهٔ «روی» چه نقشی دارد؟ فقط نام نقش ر,حرف اضافه,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,603.328,422.695,111.05070542060041,9.463088042205372,428,850,stop,حرف اضافه,
+96,persian,medium,معنیِ اصطلاحِ «آب از سرش گذشته» چیست؟ کوتاه توضیح دهید.,این اصطلاح به معنای **آرامش پس از یک ترس شدید یا خطر** است؛ زمانی که فرد از وضعی,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,539.82,5341.767,94.4759364232522,7.488158880759869,642,8301,stop,این اصطلاح به معنای **آرامش پس از یک ترس شدید یا خطر** است؛ زمانی که فرد از وضعیت خطرناک نجات یافته و دیگر نگران نیست.,
+97,persian,hard,مفهومِ این بیت چیست؟ «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز,مفهوم این بیت **اعتماد به خداوند و نتیجه‌بخش بودن نیکی‌هاست**.  پیام آن این است ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,637.975,13120.013,115.99200595634625,7.393285357262983,548,14260,stop,"مفهوم این بیت **اعتماد به خداوند و نتیجه‌بخش بودن نیکی‌هاست**.
+
+پیام آن این است که انسان باید بدون انتظار پاداش فوری یا از سوی افراد خاص، کار خیر انجام دهد و نتیجه آن را به خداوند بسپارد؛ زیرا خداوند در زمان و مکانی که انسان کمتر انتظار دارد (حتی در بیابان و تنهایی)، پاداش آن را به او بازگرداند.",
+98,persian,hard,در جملهٔ «اگر زودتر خبر می‌داد، می‌آمدم» گوینده چه چیزی را بیان می‌کند؟ کوتاه تو,گوینده با این جمله بیان می‌کند که **خبر زودتر داده نشده است** و به همین دلیل، او,0.6667,0.2887,"[0.5, 0.5, 1.0]",0,0,247.658,10115.518,16.15130542926132,7.414350901258839,514,10539,stop,گوینده با این جمله بیان می‌کند که **خبر زودتر داده نشده است** و به همین دلیل، او **نمی‌توانست بیاید** (یا نیامده است). این یک شرط غیرواقعی در گذشته است که نشان‌دهنده پشیمانی یا توضیح دلیل غیبت است.,

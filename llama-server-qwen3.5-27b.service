@@ -1,0 +1,38 @@
+[Unit]
+Description=llama.cpp server — Qwen3.5-27B Q4_K_M
+After=network.target
+
+[Service]
+Type=simple
+User=arman
+WorkingDirectory=/home/arman/ai/llama.cpp
+
+ExecStart=/home/arman/ai/llama.cpp/llama-server \
+    -m /media/arman/BlueSSD/AI/ggufs/Qwen3.5-27B-Q4_K_M.gguf \
+    --alias Qwen3.5-27B \
+    --host 0.0.0.0 \
+    --port 8001 \
+    -np 1 \
+    -fa on \
+    --no-mmap \
+    -ctk q8_0 \
+    -ctv q8_0 \
+    --ctx-size 32768 \
+    --temp 0.6 \
+    --top-k 20 \
+    --top-p 0.95 \
+    --min-p 0.0 \
+    --cache-reuse 256 \
+    --reasoning off
+
+EnvironmentFile=/home/arman/ai/llama-server-qwen3.5-27b.env
+
+Restart=on-failure
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=llama-server-qwen3.5-27b
+
+[Install]
+WantedBy=multi-user.target
