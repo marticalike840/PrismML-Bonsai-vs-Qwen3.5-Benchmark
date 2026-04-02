@@ -34,22 +34,31 @@ DATA_DIR = Path(__file__).parent
 OUTPUT_DIR = DATA_DIR / "benchmark_plots"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-COMPARISON_CSV = "benchmark_comparison_20260401_091717.csv"
+COMPARISON_CSV = "benchmark_comparison_merged.csv"
 MODEL_CSVS = {
+    "Qwen3.5-35B-A3B": "benchmark_qwen3.5-35b-a3b_20260401_215413.csv",
     "Qwen3.5-27B": "benchmark_qwen3.5-27b_20260401_091717.csv",
     "Qwen3.5-9B": "benchmark_qwen3.5-9b_20260401_091717.csv",
-    "Qwen3.5-4B": "benchmark_qwen3.5-4b_20260401_091717.csv",
     "Bonsai-8B": "benchmark_bonsai-8b_20260401_091717.csv",
+    "Qwen3.5-4B": "benchmark_qwen3.5-4b_20260401_091717.csv",
+    "Qwen3.5-2B": "benchmark_qwen3.5-2b_20260401_214409.csv",
+    "Qwen3.5-0.8B": "benchmark_qwen3.5-0.8b_20260401_214409.csv",
 }
 
 # Visual identity
 MODEL_COLORS = {
+    "Qwen3.5-35B-A3B": "#06d6a0",
     "Qwen3.5-27B": "#4361ee",
     "Qwen3.5-9B": "#7209b7",
-    "Qwen3.5-4B": "#f72585",
     "Bonsai-8B": "#fb8500",
+    "Qwen3.5-4B": "#f72585",
+    "Qwen3.5-2B": "#3a86ff",
+    "Qwen3.5-0.8B": "#ef476f",
 }
-MODEL_ORDER = ["Qwen3.5-27B", "Qwen3.5-9B", "Qwen3.5-4B", "Bonsai-8B"]
+MODEL_ORDER = [
+    "Qwen3.5-35B-A3B", "Qwen3.5-27B", "Qwen3.5-9B", "Bonsai-8B",
+    "Qwen3.5-4B", "Qwen3.5-2B", "Qwen3.5-0.8B",
+]
 
 CATEGORY_LABELS = {
     "general_knowledge": "General\nKnowledge",
@@ -63,6 +72,17 @@ CATEGORY_LABELS = {
 CATEGORY_ORDER = list(CATEGORY_LABELS.keys())
 
 DIFFICULTY_ORDER = ["easy", "medium", "hard"]
+
+# Weight file sizes in GiB (from llama-server model loads)
+MODEL_WEIGHT_GIB = {
+    "Qwen3.5-35B-A3B": 20.5,
+    "Qwen3.5-27B": 15.6,
+    "Qwen3.5-9B": 5.3,
+    "Bonsai-8B": 1.1,
+    "Qwen3.5-4B": 2.6,
+    "Qwen3.5-2B": 1.2,
+    "Qwen3.5-0.8B": 0.473,
+}
 
 BG_COLOR = "#0f0f14"
 PANEL_COLOR = "#1a1a24"
@@ -176,7 +196,7 @@ def _add_subtitle(fig, text, y=0.925, fontsize=11):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_overall_accuracy(comp: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(10, 7))
     models = comp.sort_values("overall_score", ascending=True)
     colors = [MODEL_COLORS[m] for m in models["model"]]
 
@@ -211,6 +231,39 @@ def plot_overall_accuracy(comp: pd.DataFrame):
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# Plot 1b: Accuracy per GiB of weight
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def plot_accuracy_per_gib(comp: pd.DataFrame):
+    fig, ax = plt.subplots(figsize=(10, 7))
+    comp = comp.copy()
+    comp["weight_gib"] = comp["model"].map(MODEL_WEIGHT_GIB)
+    comp["acc_per_gib"] = comp["overall_score"] / comp["weight_gib"]
+    comp = comp.sort_values("acc_per_gib", ascending=True)
+
+    colors = [MODEL_COLORS[m] for m in comp["model"]]
+    bars = ax.barh(
+        comp["model"], comp["acc_per_gib"],
+        color=colors, edgecolor="white", linewidth=0.5, height=0.55, zorder=3,
+    )
+    for bar, (_, row) in zip(bars, comp.iterrows()):
+        ax.text(
+            row["acc_per_gib"] + 0.01, bar.get_y() + bar.get_height() / 2,
+            f"{row['acc_per_gib']:.2f}  ({row['overall_score']:.1%} / {row['weight_gib']:.1f} GiB)",
+            ha="left", va="center",
+            fontsize=10, fontweight="bold", color=TEXT_COLOR,
+        )
+
+    ax.set_xlabel("Accuracy / GiB")
+    ax.set_title("Accuracy per GiB of Weight", fontsize=16, fontweight="bold", pad=14)
+    _add_subtitle(fig, "Higher is better — how much accuracy each GiB of model weight buys you")
+    ax.grid(axis="y", visible=False)
+    ax.invert_yaxis()
+    fig.tight_layout(rect=[0, 0, 1, 0.92])
+    _save(fig, "01b_accuracy_per_gib")
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # Plot 2: Accuracy by category — grouped bar chart
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -220,10 +273,10 @@ def plot_category_accuracy(detail: pd.DataFrame):
         .mean()
         .reset_index()
     )
-    fig, ax = plt.subplots(figsize=(14, 6))
+    fig, ax = plt.subplots(figsize=(18, 6.5))
     n_models = len(MODEL_ORDER)
     n_cats = len(CATEGORY_ORDER)
-    bar_w = 0.18
+    bar_w = 0.11
     x = np.arange(n_cats)
 
     for i, model in enumerate(MODEL_ORDER):
@@ -256,9 +309,9 @@ def plot_difficulty_accuracy(detail: pd.DataFrame):
         .mean()
         .reset_index()
     )
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(12, 6))
     n_models = len(MODEL_ORDER)
-    bar_w = 0.18
+    bar_w = 0.11
     x = np.arange(len(DIFFICULTY_ORDER))
 
     for i, model in enumerate(MODEL_ORDER):
@@ -327,7 +380,7 @@ def plot_radar(detail: pd.DataFrame):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_speed_comparison(comp: pd.DataFrame):
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5.5))
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
 
     # Gen tok/s
     ax = axes[0]
@@ -344,6 +397,7 @@ def plot_speed_comparison(comp: pd.DataFrame):
     ax.set_ylabel("Tokens / second")
     ax.set_title("Generation Speed", fontsize=14, fontweight="bold")
     ax.grid(axis="x", visible=False)
+    ax.tick_params(axis="x", rotation=35)
 
     # Prompt tok/s
     ax = axes[1]
@@ -359,6 +413,7 @@ def plot_speed_comparison(comp: pd.DataFrame):
     ax.set_ylabel("Tokens / second")
     ax.set_title("Prompt Processing Speed", fontsize=14, fontweight="bold")
     ax.grid(axis="x", visible=False)
+    ax.tick_params(axis="x", rotation=35)
 
     fig.suptitle("Inference Speed Comparison", fontsize=16, fontweight="bold", y=1.02)
     fig.tight_layout()
@@ -401,7 +456,7 @@ def plot_accuracy_vs_speed(comp: pd.DataFrame):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_wall_time(comp: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(10, 7))
     models = comp.sort_values("total_wall_time_s", ascending=True)
     colors = [MODEL_COLORS[m] for m in models["model"]]
 
@@ -444,7 +499,7 @@ def plot_question_heatmap(detail: pd.DataFrame):
     ]
     score_matrix = pivot[MODEL_ORDER].values
 
-    fig, ax = plt.subplots(figsize=(8, 18))
+    fig, ax = plt.subplots(figsize=(12, 20))
     cmap = sns.color_palette("blend:#1a1a24,#4361ee,#00e676", as_cmap=True)
     im = ax.imshow(score_matrix, aspect="auto", cmap=cmap, vmin=0, vmax=1, interpolation="nearest")
 
@@ -578,7 +633,7 @@ def plot_accuracy_vs_size(comp: pd.DataFrame):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_efficiency(comp: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(10, 7))
     comp = comp.copy()
     comp["efficiency"] = comp["overall_score"] / comp["params_b"]
     comp = comp.sort_values("efficiency", ascending=True)
@@ -633,7 +688,7 @@ def plot_difficulty_category_heatmap(detail: pd.DataFrame):
         cat, diff = label.split(" · ")
         pretty_labels.append(f"{CATEGORY_LABELS[cat].replace(chr(10), ' ')} ({diff[0].upper()})")
 
-    fig, ax = plt.subplots(figsize=(9, 12))
+    fig, ax = plt.subplots(figsize=(12, 12))
     cmap = sns.color_palette("blend:#2d1b3d,#7209b7,#00e676", as_cmap=True)
     sns.heatmap(
         pivot, annot=True, fmt=".0%", cmap=cmap,
@@ -669,7 +724,7 @@ def plot_model_agreement(detail: pd.DataFrame):
         for j in range(n):
             agreement[i, j] = (binary.iloc[:, i] == binary.iloc[:, j]).mean()
 
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(10, 8.5))
     cmap = sns.color_palette("blend:#1a1a24,#4361ee,#00e676", as_cmap=True)
     sns.heatmap(
         pd.DataFrame(agreement, index=MODEL_ORDER, columns=MODEL_ORDER),
@@ -729,7 +784,7 @@ def plot_hardest_questions(detail: pd.DataFrame):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_speed_by_difficulty(detail: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(10, 5.5))
+    fig, ax = plt.subplots(figsize=(12, 6))
 
     palette = {m: MODEL_COLORS[m] for m in MODEL_ORDER}
     agg = (
@@ -740,7 +795,7 @@ def plot_speed_by_difficulty(detail: pd.DataFrame):
     agg["wall_time_s"] = agg["wall_time_ms"] / 1000
 
     n_models = len(MODEL_ORDER)
-    bar_w = 0.18
+    bar_w = 0.11
     x = np.arange(len(DIFFICULTY_ORDER))
 
     for i, model in enumerate(MODEL_ORDER):
@@ -766,7 +821,7 @@ def plot_speed_by_difficulty(detail: pd.DataFrame):
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def plot_summary_table(comp: pd.DataFrame, detail: pd.DataFrame):
-    fig, ax = plt.subplots(figsize=(14, 4))
+    fig, ax = plt.subplots(figsize=(16, 6))
     ax.axis("off")
 
     comp_sorted = comp.set_index("model").reindex(MODEL_ORDER)
@@ -828,6 +883,7 @@ def main():
     log.info("Generating plots…")
     plot_summary_table(comp, detail)
     plot_overall_accuracy(comp)
+    plot_accuracy_per_gib(comp)
     plot_category_accuracy(detail)
     plot_difficulty_accuracy(detail)
     plot_radar(detail)
@@ -844,7 +900,7 @@ def main():
     plot_hardest_questions(detail)
     plot_speed_by_difficulty(detail)
 
-    log.info("All %d plots saved to %s", 17, OUTPUT_DIR)
+    log.info("All %d plots saved to %s", 18, OUTPUT_DIR)
 
 
 if __name__ == "__main__":

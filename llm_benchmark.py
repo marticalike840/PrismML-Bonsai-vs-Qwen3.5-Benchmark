@@ -43,14 +43,20 @@ N_RUNS = 3  # Number of runs per question for statistical reliability
 SYSTEM_PROMPT = "You are a helpful assistant. Answer directly and concisely."
 
 MODELS: list[dict[str, Any]] = [
+    {"name": "Qwen3.5-35B-A3B", "service": "llama-server-qwen3.5-35b-a3b",
+     "alias": "qwen3.5-35b-a3b", "params_b": 35.5, "quant": "Q4_K_M"},
     {"name": "Qwen3.5-27B", "service": "llama-server-qwen3.5-27b",
      "alias": "qwen3.5-27b", "params_b": 26.9, "quant": "Q4_K_M"},
     {"name": "Qwen3.5-9B", "service": "llama-server-qwen3.5-9b",
      "alias": "qwen3.5-9b", "params_b": 8.95, "quant": "Q4_K_M"},
-    {"name": "Qwen3.5-4B", "service": "llama-server-qwen3.5-4b",
-     "alias": "qwen3.5-4b", "params_b": 4.21, "quant": "Q4_K_M"},
     {"name": "Bonsai-8B", "service": "llama-server-bonsai-8b",
      "alias": "bonsai-8b", "params_b": 8.19, "quant": "Q1_0"},
+    {"name": "Qwen3.5-4B", "service": "llama-server-qwen3.5-4b",
+     "alias": "qwen3.5-4b", "params_b": 4.21, "quant": "Q4_K_M"},
+    {"name": "Qwen3.5-2B", "service": "llama-server-qwen3.5-2b",
+     "alias": "qwen3.5-2b", "params_b": 1.89, "quant": "Q4_K_M"},
+    {"name": "Qwen3.5-0.8B", "service": "llama-server-qwen3.5-0.8b",
+     "alias": "qwen3.5-0.8b", "params_b": 0.82, "quant": "Q4_K_S"},
 ]
 
 CAT_GK = "general_knowledge"
@@ -2142,20 +2148,27 @@ def _print_summary(all_results: dict[str, dict[str, Any]]) -> None:
     log.info("=" * len(hdr))
 
 
-def run_benchmark() -> None:
+def run_benchmark(model_filter: list[str] | None = None) -> None:
+    models = MODELS
+    if model_filter:
+        models = [m for m in MODELS if m["alias"] in model_filter]
+        if not models:
+            log.error("No models matched filter: %s", model_filter)
+            return
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     all_results: dict[str, dict[str, Any]] = {}
     total_questions = len(QUESTIONS)
 
-    log.info("LLM Benchmark — %d questions, %d models", total_questions, len(MODELS))
+    log.info("LLM Benchmark — %d questions, %d models", total_questions, len(models))
     log.info("Timestamp: %s", timestamp)
 
     try:
-        for mi, model in enumerate(MODELS):
+        for mi, model in enumerate(models):
             log.info("")
             log.info("=" * 60)
             log.info("[%d/%d] Model: %s (%s, %s)",
-                     mi + 1, len(MODELS), model["name"], model["params_b"], model["quant"])
+                     mi + 1, len(models), model["name"], model["params_b"], model["quant"])
             log.info("=" * 60)
 
             stop_all_services()
@@ -2271,4 +2284,7 @@ def run_benchmark() -> None:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
-    run_benchmark()
+    # Optional: pass model aliases as CLI args to run only those models
+    # e.g.  uv run llm_benchmark.py qwen3.5-2b qwen3.5-0.8b qwen3.5-35b-a3b
+    filter_aliases = sys.argv[1:] if len(sys.argv) > 1 else None
+    run_benchmark(model_filter=filter_aliases)

@@ -1,8 +1,8 @@
-# LLM Benchmark — Jetson Orin
+# Bonsai vs Qwen3.5, on Edge
 
 > **Note:** This benchmark is a quick experiment to compare these models on a Jetson Orin, not a thorough or rigorous evaluation. Take the results as rough directional signals, not definitive rankings.
 
-Accuracy and performance evaluation of quantized LLMs running locally on an NVIDIA Jetson Orin (30 GB unified memory) via [llama.cpp](https://github.com/ggml-org/llama.cpp).
+How good is the world's first 1-bit LLM? We pit [Bonsai-8B](https://prismml.com/news/bonsai-8b) against six Qwen3.5 variants (0.8B–27B) on an NVIDIA Jetson Orin, running 98 questions across 7 categories via [llama.cpp](https://github.com/ggml-org/llama.cpp).
 
 ## About Bonsai-8B
 
@@ -12,10 +12,13 @@ Accuracy and performance evaluation of quantized LLMs running locally on an NVID
 
 | Model | Params | Quant | Architecture | Weight Size |
 |-------|-------:|-------|--------------|------------:|
+| **Qwen3.5-35B-A3B** | 35.5 B (3B active) | Q4_K_M | MoE Hybrid SSM + Attention | 20.5 GiB |
 | **Qwen3.5-27B** | 26.9 B | Q4_K_M | Hybrid SSM + SWA + Full Attention | 15.6 GiB |
 | **Qwen3.5-9B** | 8.95 B | Q4_K_M | Hybrid SSM + Attention | 5.3 GiB |
-| **Qwen3.5-4B** | 4.21 B | Q4_K_M | Hybrid Gated DeltaNet + Attention | 2.5 GiB |
 | **Bonsai-8B** | 8.19 B | Q1_0 | Dense Transformer (Qwen3-8B 1-bit) | 1.1 GiB |
+| **Qwen3.5-4B** | 4.21 B | Q4_K_M | Hybrid Gated DeltaNet + Attention | 2.6 GiB |
+| **Qwen3.5-2B** | 1.89 B | Q4_K_M | Hybrid Gated DeltaNet + Attention | 1.2 GiB |
+| **Qwen3.5-0.8B** | 0.82 B | Q4_K_S | Hybrid Gated DeltaNet + Attention | 485 MiB |
 
 All models are served via `llama-server` behind systemd units with flash attention enabled and thinking/reasoning disabled. See the per-model docs for full server configs:
 [Qwen3.5-27B](qwen3.5-27b-server.md) | [Qwen3.5-9B](qwen3.5-9b-server.md) | [Qwen3.5-4B](qwen3.5-4b-server.md) | [Bonsai-8B](bonsai-8b-server.md)
@@ -51,15 +54,24 @@ Each question is run **3 times** per model. Scores report the mean across runs. 
 | Model | Accuracy | Gen tok/s | Prompt tok/s | Wall Time |
 |-------|:--------:|:---------:|:------------:|:---------:|
 | Qwen3.5-27B | **95.7%** | 9.5 | 107 | 444s |
+| Qwen3.5-35B-A3B | 90.2% | 34.2 | 206 | 123s |
 | Qwen3.5-9B | 90.2% | 27.0 | 320 | 167s |
 | Qwen3.5-4B | 85.2% | 36.7 | 473 | 181s |
-| Bonsai-8B | 78.9% | **46.5** | **554** | **117s** |
+| Bonsai-8B | 78.9% | 46.5 | 554 | 117s |
+| Qwen3.5-2B | 69.9% | 68.4 | 978 | 93s |
+| Qwen3.5-0.8B | 53.4% | **100.9** | **1303** | **82s** |
 
 ### Overall Accuracy
 
 ![Overall Accuracy](benchmark_plots/01_overall_accuracy.png)
 
-Qwen3.5-27B leads at 95.7%. Each step down in model size costs roughly 5 percentage points. Bonsai-8B, despite being 1-bit quantized, still reaches 78.9% — competitive given its 1.1 GiB weight footprint.
+Qwen3.5-27B leads at 95.7%. The 35B-A3B MoE model ties the dense 9B at 90.2% despite having 4x more total parameters — its 3B active param budget limits it. Below 4B, accuracy drops steeply: the 2B manages 69.9% and the 0.8B falls to 53.4%. Bonsai-8B's 1-bit quantization reaches 78.9%, outperforming the dense Qwen3.5-2B.
+
+### Accuracy per GiB
+
+![Accuracy per GiB](benchmark_plots/01b_accuracy_per_gib.png)
+
+When normalized by weight file size, the ranking inverts. Qwen3.5-0.8B leads at 1.13 accuracy/GiB — its 485 MiB footprint makes every byte count. Bonsai-8B (0.72) beats every Qwen model above 2B thanks to its 1.1 GiB file delivering 78.9% accuracy. The large models are the least efficient: Qwen3.5-35B-A3B gets only 0.04 accuracy/GiB — its 20.5 GiB of weights yield the same 90.2% that the 9B achieves from 5.3 GiB.
 
 ### Accuracy by Category
 
@@ -67,30 +79,31 @@ Qwen3.5-27B leads at 95.7%. Each step down in model size costs roughly 5 percent
 
 ![Radar](benchmark_plots/04_radar_category.png)
 
-**Strong across all models:** General Knowledge, Coding, History, Language Understanding.
+**Strong across larger models:** General Knowledge, Coding, History, Language Understanding.
 
 **Biggest differentiators:**
-- **Logical Reasoning** — the hardest category overall. Qwen3.5-27B scores 80.8%, dropping to 55.9% for Bonsai-8B. Multi-step constraint puzzles and syllogisms are where parameter count matters most.
-- **Persian** — Qwen3.5-27B (91.7%) vastly outperforms Bonsai-8B (51.2%). Multilingual capability degrades sharply with aggressive quantization.
-- **Math** — Qwen3.5-27B achieves perfect 100%, while Bonsai-8B drops to 66.7%.
+- **Math** — the widest spread. Qwen3.5-27B scores a perfect 100%, the 35B-A3B and 9B are in the 81-86% range, but below that it collapses: Qwen3.5-2B scores 31% and the 0.8B just 11.9%.
+- **Logical Reasoning** — the hardest category for top models. Even the 27B only reaches 80.8%. The smallest models struggle: 0.8B at 37.4%, 2B at 56.8%.
+- **Persian** — Qwen3.5-27B (91.7%) vastly outperforms the smaller models. Multilingual capability degrades sharply below 9B.
+- **Coding** — surprisingly robust: Bonsai-8B scores 100%, and even the 0.8B manages 44%. Code generation survives quantization better than reasoning.
 
 ### Accuracy by Difficulty
 
 ![Difficulty Accuracy](benchmark_plots/03_difficulty_accuracy.png)
 
-All models handle easy questions well (>90%). Hard questions expose the gap: Qwen3.5-27B stays above 90% while Bonsai-8B drops to ~60%.
+The top four models handle easy questions well (>90%). Hard questions expose the gap: Qwen3.5-27B stays above 90%, Bonsai-8B drops to ~73%, and the 0.8B falls to ~55%.
 
 ### Accuracy vs. Speed
 
 ![Accuracy vs Speed](benchmark_plots/06_accuracy_vs_speed.png)
 
-The classic accuracy-throughput tradeoff. Bonsai-8B generates at 46.5 tok/s (5x faster than Qwen3.5-27B) but sacrifices 17 percentage points of accuracy. Qwen3.5-9B hits a practical sweet spot: 90% accuracy at 27 tok/s.
+The classic accuracy-throughput tradeoff. Qwen3.5-0.8B is the fastest at 100.9 tok/s but sacrifices 42 points of accuracy vs. the 27B. The 35B-A3B MoE is a surprise: 34 tok/s (faster than the dense 9B at 27 tok/s) with the same 90.2% accuracy — its sparse activation pays off in throughput. Qwen3.5-9B remains a practical sweet spot for dense models: 90.2% accuracy at 27 tok/s.
 
 ### Speed Comparison
 
 ![Speed Comparison](benchmark_plots/05_speed_comparison.png)
 
-Generation speed is dominated by memory bandwidth on the Jetson's unified memory architecture. Smaller weight footprint = faster generation. Bonsai-8B's 1-bit weights make it the fastest despite having 8B parameters.
+Generation speed is dominated by memory bandwidth on the Jetson's unified memory architecture. Smaller weight footprint = faster generation. Qwen3.5-0.8B leads at 100.9 tok/s with its tiny 485 MiB footprint, followed by the 2B at 68.4 tok/s. Bonsai-8B's 1-bit weights (1.1 GiB) make it faster than the 2.4x-heavier Qwen3.5-4B (2.6 GiB). The 35B-A3B MoE achieves 34 tok/s despite its 20.5 GiB file — only 3B params are active per token.
 
 ### Performance Details
 
@@ -118,7 +131,7 @@ Generation speed is dominated by memory bandwidth on the Jetson's unified memory
 
 ![Hardest Questions](benchmark_plots/15_hardest_questions.png)
 
-The hardest questions across all models are logic constraint puzzles (card ordering, clock angles, race ordering) and Persian language tasks. These require precise multi-step reasoning or strong multilingual knowledge — areas where smaller/more-quantized models struggle most.
+The hardest questions across all models are logic constraint puzzles (card ordering, clock angles, race ordering) and Persian language tasks. These require precise multi-step reasoning or strong multilingual knowledge — areas where smaller/more-quantized models struggle most. With 7 models, the spread is wider: questions that the 27B aces but the 0.8B gets wrong reveal the minimum model capacity required for each task.
 
 ### Verbosity
 
@@ -128,21 +141,25 @@ The hardest questions across all models are logic constraint puzzles (card order
 
 1. **Qwen3.5-27B is the accuracy leader** at 95.7%, but at 9.5 tok/s it's the slowest. Best for tasks where correctness matters more than latency.
 
-2. **Qwen3.5-9B is the best all-rounder** — 90% accuracy at 27 tok/s (3x faster than 27B). Handles most categories well with the notable exception of logical reasoning.
+2. **Qwen3.5-35B-A3B ties the 9B at 90.2% but is faster** — 34 tok/s vs. 27 tok/s. The MoE architecture (3B active out of 35.5B total) trades weight file size (20.5 GiB) for throughput. Good if you have the disk/memory but want speed with high accuracy.
 
-3. **Qwen3.5-4B punches above its weight** — 85% accuracy from only 2.5 GiB of weights. The hybrid Gated DeltaNet architecture keeps it competitive.
+3. **Qwen3.5-9B is the best dense all-rounder** — 90.2% accuracy at 27 tok/s from 5.3 GiB. Handles most categories well with the notable exception of logical reasoning.
 
-4. **Bonsai-8B trades accuracy for speed** — 1-bit quantization delivers 46.5 tok/s but costs 17 points of accuracy vs. the 27B. Weakest on Persian (51%) and logic (56%).
+4. **Qwen3.5-4B punches above its weight** — 85.2% accuracy from only 2.6 GiB of weights. The hybrid Gated DeltaNet architecture keeps it competitive.
 
-5. **Logical reasoning is the hardest category for all models.** Even the 27B only reaches 81%. This is where parameter count and quantization quality matter most.
+5. **Bonsai-8B trades accuracy for speed** — 1-bit quantization delivers 46.5 tok/s but costs 17 points of accuracy vs. the 27B. Still outperforms the dense Qwen3.5-2B despite radical compression.
 
-6. **Coding is surprisingly robust** — all models score 89-100% on execution-graded code tasks. Code generation survives aggressive quantization better than reasoning or multilingual tasks.
+6. **Sub-2B models struggle on reasoning and math** — Qwen3.5-2B drops to 31% on math and 57% on logic. The 0.8B collapses to 12% on math and 37% on logic. These are usable only for simple factual or conversational tasks.
 
-7. **Persian degrades with quantization** — the 27B→Bonsai gap is 40 percentage points on Persian vs. 7 on General Knowledge. Multilingual capability is one of the first things lost.
+7. **Coding survives compression best** — Bonsai-8B scores 100%, and even larger Qwen models are 89%+. The 0.8B still manages 44%. Code generation is the most quantization-resilient capability.
+
+8. **Persian and multilingual degrade sharply below 9B** — the 27B→0.8B gap is 36 percentage points on Persian vs. 30 on General Knowledge. Multilingual capability requires parameter mass.
+
+9. **Speed scales inversely with active parameters** — from 9.5 tok/s (27B dense) to 100.9 tok/s (0.8B). The 35B-A3B MoE demonstrates that sparse activation is a viable path to high-throughput inference on memory-bandwidth-limited hardware.
 
 ## Bonsai-8B: Is 1-Bit Worth It?
 
-Bonsai-8B fits in **1.1 GiB** — 14x smaller than Qwen3.5-27B (15.6 GiB), 5x smaller than Qwen3.5-9B (5.3 GiB), and half the size of Qwen3.5-4B (2.5 GiB). It's the fastest model tested at 46.5 tok/s and finishes the full 98-question benchmark in under 2 minutes. But those gains come at a real cost.
+Bonsai-8B fits in **1.1 GiB** — 14x smaller than Qwen3.5-27B (15.6 GiB), 5x smaller than Qwen3.5-9B (5.3 GiB), and less than half the size of Qwen3.5-4B (2.6 GiB). At 46.5 tok/s it's the third-fastest model tested (behind the 0.8B and 2B) and finishes the full 98-question benchmark in under 2 minutes. But those gains come at a real cost.
 
 **Where Bonsai holds up well:**
 - **Coding (100%)** — perfect score, matching or beating every Qwen model. That said, 100% on 14 questions doesn't make it a coding beast — it would need a dedicated coding benchmark to draw real conclusions. But for now, it's looking good.
@@ -156,22 +173,24 @@ Bonsai-8B fits in **1.1 GiB** — 14x smaller than Qwen3.5-27B (15.6 GiB), 5x sm
 
 **The tradeoff in numbers:**
 
-| | Bonsai-8B | Qwen3.5-4B | Qwen3.5-9B | Qwen3.5-27B |
-|---|:-:|:-:|:-:|:-:|
-| Weight Size | **1.1 GiB** | 2.5 GiB | 5.3 GiB | 15.6 GiB |
-| Accuracy | 78.9% | 85.2% | 90.2% | 95.7% |
-| Gen Speed | **46.5 tok/s** | 36.7 tok/s | 27.0 tok/s | 9.5 tok/s |
-| Accuracy per GiB | **71.7%/GiB** | 34.1%/GiB | 17.0%/GiB | 6.1%/GiB |
+| | Qwen3.5-0.8B | Qwen3.5-2B | Bonsai-8B | Qwen3.5-4B | Qwen3.5-9B | Qwen3.5-35B-A3B | Qwen3.5-27B |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| Weight Size | 485 MiB | 1.2 GiB | **1.1 GiB** | 2.6 GiB | 5.3 GiB | 20.5 GiB | 15.6 GiB |
+| Accuracy | 53.4% | 69.9% | 78.9% | 85.2% | 90.2% | 90.2% | 95.7% |
+| Gen Speed | **100.9 tok/s** | 68.4 tok/s | 46.5 tok/s | 36.7 tok/s | 27.0 tok/s | 34.2 tok/s | 9.5 tok/s |
 
-Bonsai delivers the best accuracy-per-gigabyte by a wide margin. If you're running on a device where every megabyte of RAM counts — phones, embedded boards, IoT — and your workload is primarily English coding or factual Q&A, Bonsai is a compelling choice. But if your use case involves reasoning, math, or non-English languages, the 2.5 GiB Qwen3.5-4B is a better investment: 6 more accuracy points for just 1.4 GiB of additional weight.
+Bonsai-8B sits at a unique point in this lineup: at 1.1 GiB it's smaller than the Qwen3.5-2B (1.2 GiB) yet scores 9 points higher (78.9% vs. 69.9%). It proves that native 1-bit quantization can outperform a conventionally-quantized model with fewer total parameters. If you're running on a device where every megabyte of RAM counts and your workload is primarily English coding or factual Q&A, Bonsai is a compelling choice. But if your use case involves reasoning, math, or non-English languages, the 2.6 GiB Qwen3.5-4B is a better investment: 6 more accuracy points for just 1.5 GiB of additional weight.
 
 **Bottom line:** Bonsai-8B proves that 1-bit models are viable for production use in constrained environments. It's not a toy — it holds its own on factual and coding tasks (though the latter needs more rigorous benchmarking to confirm). But it's a specialist, not a generalist. For multilingual or reasoning-heavy workloads, spend the extra memory on a Qwen3.5 variant.
 
 ## Running
 
 ```bash
-# Run the benchmark (requires systemd services configured)
+# Run the full benchmark (all 7 models)
 uv run llm_benchmark.py
+
+# Run specific models only
+uv run llm_benchmark.py qwen3.5-2b qwen3.5-0.8b qwen3.5-35b-a3b
 
 # Generate analysis plots
 uv run benchmark_eda.py
