@@ -1,0 +1,499 @@
+question_id,category,difficulty,prompt_preview,response_preview,score_mean,score_std,run_scores,prompt_tokens,completion_tokens,prompt_ms,predicted_ms,prompt_tok_s,gen_tok_s,ttft_ms,wall_time_ms,finish_reason,full_response,error
+1,general_knowledge,easy,What is the chemical symbol for gold? A) Au B) Ag C) Fe D) Gd Answer with just t,A) Au,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,721.8756519723684,108.88004105072469,84.50208818282034,27.5532592663367,716,823,stop,A) Au,
+2,general_knowledge,easy,What gas do plants absorb from the atmosphere for photosynthesis? Answer in one ,Carbon dioxide.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,566.4495690725744,106.36314691510051,86.50372897312955,28.20525799593549,575,682,stop,Carbon dioxide.,
+3,general_knowledge,medium,"What is the tallest mountain in the world, and what is its height in meters?","The tallest mountain in the world is Mount Everest, located in the Himalayas. It",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,543.6595729552209,814.2879079096019,86.45115866261257,49.12267468478802,553,1366,stop,"The tallest mountain in the world is Mount Everest, located in the Himalayas. Its height is approximately **8,848 meters (29,029 feet)** above sea level.",
+4,general_knowledge,medium,Name the four fundamental forces of nature.,The four fundamental forces of nature are:  1. **Gravity**   2. **Electromagneti,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,443.8836839981377,776.9867230672389,85.60801257150833,48.90688459899405,449,1222,stop,"The four fundamental forces of nature are:
+
+1. **Gravity**  
+2. **Electromagnetism**  
+3. **Strong Nuclear Force**  
+4. **Weak Nuclear Force**",
+5,general_knowledge,medium,Which organ in the human body produces insulin? Answer with just the organ name.,Pancreas.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,530.7529859710485,135.30977303162217,86.66931928011651,29.561796686076708,538,674,stop,Pancreas.,
+6,general_knowledge,hard,What phenomenon explains why the sky appears blue during the day? Name the type ,The phenomenon that explains why the sky appears blue during the day is **Raylei,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,677.8676050016657,1784.1668060282245,87.0376450573339,52.12517108029236,686,2466,stop,"The phenomenon that explains why the sky appears blue during the day is **Rayleigh scattering**. 
+
+Rayleigh scattering occurs when light interacts with gas molecules or small particles in the atmosphere, causing it to scatter in all directions. Blue light has a shorter wavelength and is scattered more efficiently than red light, which is why the sky appears blue during the day. This is because shorter wavelengths are more affected by the small particles in the atmosphere, leading to a blue sky.",
+7,general_knowledge,hard,"What is the Haber-Bosch process, and why is it significant?",The Haber-Bosch process is a method used to produce ammonia from nitrogen and hy,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,531.3293250510469,1428.5709689138457,86.5753080645052,51.80001666718932,537,1968,stop,"The Haber-Bosch process is a method used to produce ammonia from nitrogen and hydrogen gases. It is significant because it is the primary industrial process for making fertilizers, which are essential for agriculture and food production. By enabling the large-scale synthesis of ammonia, the process has drastically increased the availability of nitrogen-based fertilizers, supporting global food security and economic growth.",
+8,general_knowledge,hard,"What is the Chandrasekhar limit, and what is its approximate value in solar mass",The Chandrasekhar limit is the maximum mass a white dwarf can have before it und,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,565.5622850172222,724.9618190107867,86.63944060291765,48.27840457550943,572,1266,stop,The Chandrasekhar limit is the maximum mass a white dwarf can have before it undergoes a supernova explosion. It is approximately **1.4 solar masses**.,
+9,math,easy,What is 247 multiplied by 83? Give only the number.,"247 × 83 = 20, 381 (exact calculation: 247 × 80 = 19,760; 247 × 3 = 741; 19,760 ",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,543.3084140531719,1247.9469010140747,86.50703501786788,51.284233285882564,551,1799,length,"247 × 83 = 20, 381 (exact calculation: 247 × 80 = 19,760; 247 × 3 = 741; 19,760 + 741 = ",
+10,math,easy,What is 15% of 240? Give only the number.,36,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,542.7593910135329,77.88101001642644,86.59454037678387,25.68020111164667,550,628,stop,36,
+11,math,medium,Solve for x: 3x + 7 = 34. Give only the value of x.,To solve for $ x $ in the equation $ 3x + 7 = 34 $:  1. Subtract 7 from both sid,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,610.7437169412151,1209.7091040341184,86.77944370093508,52.90528093619684,617,1854,length,"To solve for $ x $ in the equation $ 3x + 7 = 34 $:
+
+1. Subtract 7 from both sides:  
+   $ 3x = 34 - 7 $  
+   $ 3x = 27 $
+
+2. Divide both sides by 3",
+12,math,medium,"A store offers a 20% discount on a $150 item, then an additional 10% off the alr","First, apply the 20% discount:   $150 × 0.20 = $30   Final price after first dis",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,836.910248035565,1952.8386490419507,87.22560175520496,52.74373284783722,845,2807,stop,"First, apply the 20% discount:  
+$150 × 0.20 = $30  
+Final price after first discount: $150 - $30 = $120  
+
+Then apply the additional 10% discount:  
+$120 × 0.10 = $12  
+Final price after second discount: $120 - $12 = $108  
+
+The final price is **$108**.",
+13,math,medium,"What is the sum of the interior angles of a hexagon, in degrees? Give only the n",The sum of the interior angles of a hexagon is **720 degrees**.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,588.7385760433972,415.82721599843353,86.62588468848809,43.28720994555539,596,1015,stop,The sum of the interior angles of a hexagon is **720 degrees**.,
+14,math,hard,"What is C(10,3), that is, '10 choose 3'? Give only the number.","C(10,3) is the number of ways to choose 3 items from a set of 10 without regard ",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,622.096847044304,1271.4429589686915,86.8032047687814,50.33650904159512,629,1891,length,"C(10,3) is the number of ways to choose 3 items from a set of 10 without regard to order, which is calculated as:
+
+$$
+C(10,3) = \frac{10!}{3!(10-3)!} = \frac{1",
+15,math,hard,A car travels the first half of a 240 km journey at 40 km/h and the second half ,"To find the average speed for the entire journey, we use the formula:  $$ \text{",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,904.6731420094147,4365.540476050228,87.32435653448178,52.91441031581039,913,5274,stop,"To find the average speed for the entire journey, we use the formula:
+
+$$
+\text{Average Speed} = \frac{\text{Total Distance}}{\text{Total Time}}
+$$
+
+### Step 1: Calculate the distance of each half
+- Total distance = 240 km
+- First half = 240 km / 2 = **120 km**
+- Second half = 240 km / 2 = **120 km**
+
+### Step 2: Calculate the time for each half
+- First half at 40 km/h: $ \frac{120}{40} = 3 $ hours
+- Second half at 60 km/h: $ \frac{120}{60} = 2 $ hours
+
+### Step 3: Calculate the total time
+- Total time = 3 hours + 2 hours = **5 hours**
+
+### Step 4: Calculate the average speed
+- Average speed = $ \frac{240}{5} = 48 $ km/h
+
+**Answer: 48**",
+16,math,hard,What is the definite integral of x² from 0 to 3? Give only the number.,"To find the definite integral of $ x^2 $ from 0 to 3, we integrate:  $$ \int_0^3",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,576.7137610819191,2465.0120409205556,86.69812196990001,52.33240156986216,584,3037,stop,"To find the definite integral of $ x^2 $ from 0 to 3, we integrate:
+
+$$
+\int_0^3 x^2 \, dx
+$$
+
+The antiderivative of $ x^2 $ is:
+
+$$
+\frac{x^3}{3}
+$$
+
+Evaluate from 0 to 3:
+
+$$
+\frac{3^3}{3} - \frac{0^3}{3} = \frac{27}{3} - 0 = 9
+$$
+
+The definite integral of $ x^2 $ from 0 to 3 is **9**.",
+17,coding,easy,Write a Python function `fizzbuzz(n)` that takes an integer n and returns a list,```python def fizzbuzz(n):     return [str(i) if i % 3 != 0 and i % 5 != 0 else ,0.7500,0.0000,"[0.75, 0.75, 0.75]",0,0,1231.1683450825512,1413.355938042514,87.72155362129496,50.942581455963165,1241,2655,stop,"```python
+def fizzbuzz(n):
+    return [str(i) if i % 3 != 0 and i % 5 != 0 else 'Fizz' if i % 3 == 0 else 'Buzz' if i % 5 == 0 else 'FizzBuzz' for i in range(1, n + 1)]
+```",
+18,coding,easy,"Write a Python function `max_of_three(a, b, c)` that returns the largest of thre","```python def max_of_three(a, b, c):     if a > b and a > c:         return a   ",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,780.8043850818649,995.4884760081768,87.08967482664741,49.22206653409569,789,1782,stop,"```python
+def max_of_three(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    else:
+        return c
+```",
+19,coding,medium,Write a Python function `is_palindrome(s)` that returns True if the string is a ,"```python import re  def is_palindrome(s):     s = re.sub(r'[^a-zA-Z0-9]', '', s",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,735.8679140452296,836.5364238852635,86.97213015876419,49.01161363611278,744,1583,stop,"```python
+import re
+
+def is_palindrome(s):
+    s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
+    return s == s[::-1]
+```",
+20,coding,medium,"Write a Python function `two_sum(nums, target)` that takes a list of integers an","```python def two_sum(nums, target):     num_map = {}     for i, num in enumerat",0.3333,0.0000,"[0.3333333333333333, 0.3333333333333333, 0.3333333333333333]",0,0,1018.7246180139482,1045.1477649621665,87.36413985313294,49.75373027935658,1025,2068,stop,"```python
+def two_sum(nums, target):
+    num_map = {}
+    for i, num in enumerate(nums):
+        if num in num_map:
+            return [num_map[num], i]
+        num_map[num] = i
+    return []
+```",
+21,coding,medium,The following Python function is supposed to merge two sorted lists into one sor,The given function is already correct and works as intended. It merges two sorte,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1595.0100449845195,2520.1320339692757,87.77374188973135,52.378208054478975,1603,4128,stop,"The given function is already correct and works as intended. It merges two sorted lists into one sorted list by comparing elements from both lists and appending the smaller one. There are no bugs in the code. 
+
+Here is the corrected Python code (which is the same as the original):
+
+```python
+def merge_sorted(a, b):
+    result = []
+    i = j = 0
+    while i < len(a) and j < len(b):
+        if a[i] <= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    return result
+```",
+22,coding,hard,Write a Python function `flatten(lst)` that takes an arbitrarily nested list of ,```python def flatten(lst):     result = []     for item in lst:         if isin,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1178.771375096403,896.83288091328,87.379115387474,49.06153747975106,1185,2085,stop,"```python
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+```",
+23,coding,hard,"Write a Python function `group_by_key(pairs)` that takes a list of (key, value) ",```python from collections import defaultdict  def group_by_key(pairs):     retu,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1433.7468879530206,460.34200105350465,87.88162056964731,54.30744955443311,1442,1959,stop,"```python
+from collections import defaultdict
+
+def group_by_key(pairs):
+    return defaultdict(list).update(pairs)
+```",
+24,coding,hard,Write a Python function `topological_sort(graph)` that takes a directed acyclic ,```python def topological_sort(graph):     in_degree = {node: 0 for node in grap,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1675.526739913039,2492.4673220375553,87.73360430381994,52.157153215443934,1682,4173,stop,"```python
+def topological_sort(graph):
+    in_degree = {node: 0 for node in graph}
+    for node in graph:
+        for neighbor in graph[node]:
+            in_degree[neighbor] += 1
+
+    queue = [node for node in graph if in_degree[node] == 0]
+    topological_order = []
+
+    while queue:
+        node = queue.pop(0)
+        topological_order.append(node)
+        for neighbor in graph[node]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+
+    return topological_order
+```",
+25,history,easy,In what year did World War II end? A) 1943 B) 1944 C) 1945 D) 1946 Answer with j,C) 1945,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,884.762444999069,207.6973239891231,87.0290103690839,33.702889693304776,889,1104,stop,C) 1945,
+26,history,easy,What ancient civilization built the pyramids at Giza? Answer in one or two words,Egypt.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,554.1415989864618,82.41374103818089,86.62045962222138,24.267797758063598,562,645,stop,Egypt.,
+27,history,medium,"Who was the first President of the United States, and in what year did they take","The first President of the United States was George Washington, who took office ",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,565.8937430707738,475.71541205979884,86.58869372562013,44.14403962459858,573,1048,stop,"The first President of the United States was George Washington, who took office in 1789.",
+28,history,medium,"What event is commonly considered the start of the French Revolution, and in wha",The event commonly considered the start of the French Revolution is the **Stormi,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,577.5605239905417,652.2221099585295,86.571013639462,45.996600762135316,583,1227,stop,"The event commonly considered the start of the French Revolution is the **Storming of the Bastille**, which occurred in **1789**.",
+29,history,medium,"Who invented the printing press in Europe, and in approximately what year?","The printing press was invented by Johannes Gutenberg in Europe, and it was appr",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,509.58891201298684,542.4635460367426,86.34410789314558,46.086046118031085,515,1060,stop,"The printing press was invented by Johannes Gutenberg in Europe, and it was approximately invented in the year 1440.",
+30,history,hard,Name the three countries that formed the Triple Entente before World War I.,The three countries that formed the Triple Entente before World War I were Franc,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,520.6450310070068,479.6351100085303,86.43124839386856,43.783283504050644,527,1004,stop,"The three countries that formed the Triple Entente before World War I were France, Britain, and Russia.",
+31,history,hard,What was the significance of the Treaty of Westphalia (1648)?,The Treaty of Westphalia (1648) ended the Thirty Years' War and established the ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,543.2425279868767,1482.9136020271108,86.51752684785275,51.25045713796788,549,2028,stop,"The Treaty of Westphalia (1648) ended the Thirty Years' War and established the principle of state sovereignty. It recognized the independence of the Dutch Republic and the Holy Roman Empire, and it marked the end of the era of absolute monarchy in Europe. It also laid the foundation for modern international relations, emphasizing the importance of national sovereignty and the rule of law.",
+32,history,hard,What was the Silk Road? Which two regions did it primarily connect? Name one maj,The Silk Road was a vast network of trade routes that connected East and West. I,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,644.3021269515157,907.6740109594539,86.91574597923693,49.5772705361839,652,1561,stop,The Silk Road was a vast network of trade routes that connected East and West. It primarily connected the **Middle East** and **China**. One major commodity traded on the Silk Road besides silk was **cotton**.,
+33,logical_reasoning,easy,All cats are animals. Some animals are pets. Can we conclude that all cats are p,No.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,633.4256500704214,81.62964705843478,86.82944871885967,24.500902209809816,641,723,stop,No.,
+34,logical_reasoning,easy,"What is the next number in the sequence: 2, 6, 18, 54, ? Answer with just the nu",The next number in the sequence is **162**.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,689.5710000535473,331.47029601968825,87.01061963937117,39.21920050183876,696,1024,stop,The next number in the sequence is **162**.,
+35,logical_reasoning,medium,"If it rains, the ground gets wet. The ground is wet. Can we conclude that it rai",Yes.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,666.5009700227529,81.02101797703654,87.02162878775707,24.684952743581327,674,755,stop,Yes.,
+36,logical_reasoning,medium,"If A > B and B > C, and C = 5, what is the minimum possible integer value of A? ",The minimum possible integer value of A is **10**.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,700.6505520548671,333.5663250181824,87.06194524659871,38.97275901364259,707,1038,stop,The minimum possible integer value of A is **10**.,
+37,logical_reasoning,medium,"Alice, Bob, and Charlie each own exactly one pet: a cat, a dog, and a fish (one ","Alice owns a dog, Bob owns a cat, and Charlie owns a fish.",0.3333,0.0000,"[0.3333, 0.3333, 0.3333]",0,0,1389.8629179457203,390.08158806245774,87.77844089856104,41.01706025006791,1396,1783,stop,"Alice owns a dog, Bob owns a cat, and Charlie owns a fish.",
+38,logical_reasoning,hard,"Five houses stand in a row, numbered 1 to 5 from left to right. Each house is a ","To solve this puzzle, we'll analyze the constraints step by step and deduce the ",0.4000,0.0000,"[0.4, 0.4, 0.4]",0,0,1806.8347160005942,9719.287763000466,87.99919471989364,52.67875717694968,1814,11519,length,"To solve this puzzle, we'll analyze the constraints step by step and deduce the color of each house.
+
+### Given:
+- Houses are numbered 1 to 5 from left to right.
+- Each house has a different color: Red, Blue, Green, Yellow, White.
+- **Constraints:**
+  1. Red is immediately to the left of Blue.
+  2. Green is at position 3.
+  3. Yellow is at one of the ends (position 1 or 5).
+  4. White is not adjacent to Red.
+  5. Blue is not at either end.
+
+---
+
+### Step-by-step deduction:
+
+#### **Constraint 2: Green is at position 3.**
+So, house 3 = Green.
+
+#### **Constraint 5: Blue is not at either end.**
+This means Blue can only be in house 2 or 4.
+
+#### **Constraint 1: Red is immediately to the left of Blue.**
+So, if Blue is in house 2, Red must be in house 1.  
+If Blue is in house 4, Red must be in house 3.  
+But house 3 is already Green, so Blue cannot be in house 4.
+
+Thus, Blue must be in house 2, and Red must be in house 1.
+
+#### **Now, house 1 = Red, house 2 = Blue**
+
+#### **Constraint 3: Yellow is at one of the ends (position 1 or 5).**
+Since house 1 is Red, and house 5 is not yet determined, Yellow could be in house 1 or 5.
+
+But house 1 is Red, and we are told that **White is not adjacent to Red** (constraint 4), so White cannot be in house 2 (adjacent to Red in house 1).  
+Therefore, White cannot be in house 1 or 2.
+
+So, Yellow must be in house 5.
+
+#### **Now, house 5 = Yellow**
+
+#### **Constraint 4: White is not adjacent to Red.**
+Red is in house 1, so White cannot be in house 2.
+
+So, White must be in house 4 or 5.
+
+But house 5 is Yellow, so White cannot be in house 5.  
+Thus, White must be in house 4.
+
+#### **Now, house 4 = White**
+
+#### **Remaining color: Blue, Green, Yellow, Red, White.**
+We have",
+39,logical_reasoning,hard,All roses are flowers. Some flowers fade quickly. Can we conclude that some rose,Yes.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,632.8824409283698,81.26663800794631,86.90397527749542,24.610345020110696,640,722,stop,Yes.,
+40,logical_reasoning,hard,A says 'B always lies.' B says 'A and I both tell the truth.' If exactly one of ,A is the truth-teller.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,803.5961280111223,212.71631796844304,87.10843365217303,32.90767754375321,811,1023,stop,A is the truth-teller.,
+41,language_understanding,easy,What is the sentiment of the following text? 'I just watched that movie and it w,Negative,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,837.3790920013562,41.97539994493127,87.17676461867258,23.82347759192119,845,888,stop,Negative,
+42,language_understanding,easy,Complete the analogy: Painter is to Canvas as Author is to ___. Answer with one ,Book.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,565.8171790419146,84.47976200841367,86.60041054775076,23.674309117973273,574,657,stop,Book.,
+43,language_understanding,medium,Read the following passage and provide a one-sentence summary:  'The Industrial ,"The Industrial Revolution, starting in Britain in the late 18th century, transfo",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1593.1688600685447,1235.5510869529098,87.87517978099109,50.180037599985525,1602,2839,stop,"The Industrial Revolution, starting in Britain in the late 18th century, transformed economies from agrarian to industrial, introducing innovations like the steam engine and mechanized textile production, which led to urbanization, new social classes, and significant changes in working conditions, while also creating environmental challenges and social inequalities.",
+44,language_understanding,medium,Which meaning of the word 'bank' is used in this sentence? 'We sat on the bank a,B) The side of a river,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1063.6972399661317,214.33140500448644,87.43089340248841,32.6597028552744,1072,1291,stop,B) The side of a river,
+45,language_understanding,medium,What is the antonym of 'ephemeral'? Answer with one word.,Permanent,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,532.1048559853807,42.00053703971207,86.44912648807667,23.809219369135366,540,583,stop,Permanent,
+46,language_understanding,hard,A colleague asks you: 'Do you think John would make a good manager?' You reply: ,"You are implying that John is reliable and well-organized, which are positive tr",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,848.1313830707222,1070.2035040594637,87.2506329527361,49.52329141042988,856,1930,stop,"You are implying that John is reliable and well-organized, which are positive traits that can contribute to effective management. However, you are not providing any information about his communication skills, team motivation, or problem-solving abilities, which are also important factors in managerial success.",
+47,language_understanding,hard,Identify the literary device in this sentence: 'The wind whispered through the t,Imagery,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,599.778269068338,118.63367399200797,86.69870630820601,25.287929632880644,608,725,stop,Imagery,
+48,language_understanding,hard,Rewrite the following sentence from passive voice to active voice: 'The cake was,The children ate the cake.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,587.9945149645209,196.9307380495593,86.7355029716175,30.467564685052107,595,793,stop,The children ate the cake.,
+49,persian,easy,پایتخت ایران کجاست؟ فقط نام شهر را بنویسید.,پایتخت ایران، تهران است.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,611.304335994646,328.5949230194092,86.6998594305148,39.562388488978954,617,945,stop,پایتخت ایران، تهران است.,
+50,persian,easy,معنی کلمه «آسمان» به انگلیسی چیست؟ فقط یک کلمه بنویسید.,Sky,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,758.3254500059411,43.63206902053207,87.03387180198544,22.918922307567563,766,810,stop,Sky,
+51,persian,medium,جمله زیر را به انگلیسی ترجمه کنید: «من یک دانشجو هستم.»,I am a student.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,734.3561359448358,176.27066001296043,87.15117484196745,28.365469327864155,744,919,stop,I am a student.,
+52,persian,medium,کدام فعل در این جمله استفاده شده است؟ «بچه‌ها در پارک بازی می‌کنند.» فقط فعل را ,بازی,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,882.5063669355586,116.81444896385074,87.25149515620731,25.68175449706891,890,1007,stop,بازی,
+53,persian,hard,این ضرب‌المثل فارسی «تا تنور داغ است نان را بچسبان» معادل کدام ضرب‌المثل انگلیسی,"""Ta nayn daga is nana bch saban"" معادل ضرب‌المثل انگلیسی «To be a good friend is",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1085.9461521031335,897.5750929675996,87.48131738946273,49.0209681003128,1093,1987,stop,"""Ta nayn daga is nana bch saban"" معادل ضرب‌المثل انگلیسی «To be a good friend is to be a good man» است.",
+54,persian,medium,جمله زیر را به فارسی ترجمه کنید: «The sun rises in the east.»,شمس در جنوب راه می‌گیرد.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,655.8636000845581,366.9904110720381,86.90831446149961,40.87300252936469,664,1033,stop,شمس در جنوب راه می‌گیرد.,
+55,persian,hard,شعر زیر از کیست؟ «بنی‌آدم اعضای یکدیگرند / که در آفرینش ز یک گوهرند» فقط نام شاع,شاعر: شاعر از ادبیات اسلامی و ادبیات ادبیاتی است.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1005.0271010259166,609.2214050004259,87.55982789933816,45.960302396105774,1010,1617,stop,شاعر: شاعر از ادبیات اسلامی و ادبیات ادبیاتی است.,
+56,persian,hard,در ادبیات فارسی، «شاهنامه» اثر کیست و موضوع اصلی آن چیست؟,در ادبیات فارسی، «شاهنامه» اثر **مصطفی ابادی** است. موضوع اصلی آن، **تاریخ و تار,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,723.4725680900738,4066.073330002837,87.08001212308076,53.12250480240338,730,4800,stop,در ادبیات فارسی، «شاهنامه» اثر **مصطفی ابادی** است. موضوع اصلی آن، **تاریخ و تاریخچه ایران** است، به طور خاص به تاریخ اولیه ایران، از دوران امیر خلافه به دوران امیر خلافه، و به طور مفصل تاریخچه ایران را معرفی می‌کند. اثر به عنوان یک مجموعه چندین قصه و داستان‌های تاریخی و اجتماعی از دوران امیر خلافه به دوران امیر خلافه، به طور مجموعه‌ای به عنوان یک «ساختارهای» یا «ساختارهای» ادبیاتی معرفی می‌شود.,
+57,general_knowledge,easy,What is the SI unit of electric current? Answer with one word.,Ampere.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,509.4876670045778,145.10761201381683,86.3612661297347,27.565748925832565,516,659,stop,Ampere.,
+58,general_knowledge,easy,Which metal is liquid at standard room temperature? Answer with one word.,Mercury,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,509.2403170419857,82.18422695063055,86.40321382168236,24.335569904446917,516,601,stop,Mercury,
+59,general_knowledge,medium,What mineral ore is the primary commercial source of aluminum? Answer with one w,Bauxite,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,532.3414870072156,113.74751606490463,86.4106990018918,26.374202301597446,539,655,stop,Bauxite,
+60,general_knowledge,medium,In which layer of Earth's atmosphere is most ozone found? Answer with one word.,Stratosphere,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,544.2150419112295,114.5082269795239,86.36291976594516,26.198990929590178,551,667,stop,Stratosphere,
+61,general_knowledge,hard,What scientific law states that pressure applied to a confined fluid is transmit,The scientific law that states pressure applied to a confined fluid is transmitt,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,657.9424020601436,581.1981209553778,86.63372328872875,46.45575927812223,664,1224,stop,The scientific law that states pressure applied to a confined fluid is transmitted undiminished in all directions is the **Law of Pascal**.,
+62,general_knowledge,hard,What term describes the symbiotic association between fungi and plant roots? Ans,Mycorrhiza,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,555.676200077869,141.88197103794664,86.38124143750187,28.192447361266158,561,706,stop,Mycorrhiza,
+63,math,easy,What is (18² − 17²)? Give only the number.,(18² − 17²) = (324 − 289) = 35,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,543.9913779264316,558.613209053874,86.3984281867721,44.75368572530289,551,1105,stop,(18² − 17²) = (324 − 289) = 35,
+64,math,easy,A recipe uses 3 cups of flour for 8 muffins. How many cups are needed for 20 muf,"To find out how many cups of flour are needed for 20 muffins, we can set up a pr",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,702.5294390041381,2210.3857710026205,86.82910154835616,52.47952711321651,708,2916,stop,"To find out how many cups of flour are needed for 20 muffins, we can set up a proportion:
+
+$$
+\frac{3 \text{ cups}}{8 \text{ muffins}} = \frac{x \text{ cups}}{20 \text{ muffins}}
+$$
+
+Solving for $ x $:
+
+$$
+x = \frac{3 \times 20}{8} = \frac{60}{8} = 7.5 \text{ cups}
+$$
+
+**Answer: 7.5 cups**",
+65,math,medium,Solve for x: 2(x − 3) = 3x + 5. Give only the value of x.,To solve the equation:  $$ 2(x - 3) = 3x + 5 $$  1. Expand the left side:  $$ 2x,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,655.9946810593829,1919.5842980407178,86.89094842651653,52.09461241273334,662,2574,stop,"To solve the equation:
+
+$$
+2(x - 3) = 3x + 5
+$$
+
+1. Expand the left side:
+
+$$
+2x - 6 = 3x + 5
+$$
+
+2. Subtract $ 2x $ from both sides:
+
+$$
+-6 = x + 5
+$$
+
+3. Subtract 5 from both sides:
+
+$$
+x = -11
+$$
+
+**Answer:** $ x = -11 $",
+66,math,medium,"At 3:40, what is the smaller angle between the hour hand and the minute hand of ","To find the smaller angle between the hour and minute hands at 3:40, we calculat",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,701.9475010456517,2429.5982440235093,86.9010857779702,52.683607388531456,708,3138,length,"To find the smaller angle between the hour and minute hands at 3:40, we calculate the positions of both hands:
+
+- **Minute hand**: At 40 minutes, it has moved $ \frac{40}{60} \times 360^\circ = 240^\circ $
+- **Hour hand**: At 3:40, it has moved $ \frac{40}{60} \times 30^\circ = 20^\circ $ from 3 o'clock.
+
+The angle between them is $ |240^\circ - 20^\",
+67,math,hard,"A tank is 3/5 full. After adding 24 liters, it becomes 3/4 full. What is the tan",Let the total capacity of the tank be $ x $ liters.  When the tank is $ \frac{3},1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,791.915088891983,4214.384717051871,87.1305534745425,53.38857629433423,799,5022,stop,"Let the total capacity of the tank be $ x $ liters.
+
+When the tank is $ \frac{3}{5} $ full, it contains $ \frac{3}{5}x $ liters.
+
+After adding 24 liters, it becomes $ \frac{3}{4} $ full, so it contains $ \frac{3}{4}x $ liters.
+
+The amount added is $ \frac{3}{4}x - \frac{3}{5}x = 24 $ liters.
+
+Solving:
+
+$$
+\frac{3}{4}x - \frac{3}{5}x = 24
+$$
+
+$$
+\left( \frac{15}{20} - \frac{12}{20} \right)x = 24
+$$
+
+$$
+\frac{3}{20}x = 24
+$$
+
+$$
+x = 24 \times \frac{20}{3} = 160
+$$
+
+The tank's total capacity is **160 liters**.",
+68,math,hard,Find the sum of the infinite geometric series: 12 − 6 + 3 − 1.5 + … Give only th,To find the sum of the infinite geometric series:   **12 − 6 + 3 − 1.5 + …**  ##,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,690.2590970275924,4817.769084009342,86.92388156617307,53.13662725133291,696,5512,length,"To find the sum of the infinite geometric series:  
+**12 − 6 + 3 − 1.5 + …**
+
+### Step 1: Identify the common ratio (r)
+The series alternates between positive and negative terms:  
+12, −6, 3, −1.5, …  
+The ratio between consecutive terms is:  
+$$
+r = \frac{-6}{12} = -\frac{1}{2}
+$$
+
+### Step 2: Use the formula for the sum of an infinite geometric series
+$$
+S = \frac{a}{1 - r}
+$$  
+Where:  
+- $ a $ is the first term  
+- $ r $ is the common ratio  
+
+### Step 3: Plug in the values
+- $ a = 12 $  
+- $ r = -\frac{1}{2} $
+
+$$
+S = \frac{12}{1 - (-\frac{1}{2})} = \frac{12}{1 + \frac{1}{2}} = \frac{12}{\frac{3}{2}} = 12 \times \frac{2}{3} = 8
+$$
+
+### Final Answer",
+69,coding,easy,Write a Python function `unique_preserve_order(items)` that returns a new list c,```python def unique_preserve_order(items):     seen = set()     result = []    ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1017.3874980537221,963.8638189062476,87.47895975747527,48.76207517918209,1024,1976,stop,"```python
+def unique_preserve_order(items):
+    seen = set()
+    result = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+```",
+70,coding,easy,"Write a Python function `chunk_string(s, n)` that splits a string into consecuti","```python def chunk_string(s, n):     return [s[i:i+n] for i in range(0, len(s),",1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,962.0672420132905,650.1009189523757,87.31198437254304,47.68490413758508,969,1622,stop,"```python
+def chunk_string(s, n):
+    return [s[i:i+n] for i in range(0, len(s), n)]
+```",
+71,coding,medium,Write a Python function `rotate_matrix_clockwise(M)` that returns a new matrix r,```python def rotate_matrix_clockwise(M):     n = len(M)     rotated = [[0] * n ,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,1006.998136988841,1291.6498180711642,87.38844369974755,51.09744071234305,1014,2303,stop,"```python
+def rotate_matrix_clockwise(M):
+    n = len(M)
+    rotated = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            rotated[j][n - 1 - i] = M[i][j]
+    return rotated
+```",
+72,coding,medium,"Write a Python function `decode_ranges(spec)` that takes a string like ""1-3,5,8-",```python def decode_ranges(spec):     result = []     i = 0     while i < len(s,0.2500,0.0000,"[0.25, 0.25, 0.25]",0,0,1018.6979220015928,1829.71101696603,87.366429319035,51.92076733380884,1025,2862,stop,"```python
+def decode_ranges(spec):
+    result = []
+    i = 0
+    while i < len(spec):
+        if spec[i] == '-':
+            start = spec[i+1]
+            i += 2
+            while i < len(spec) and spec[i] != '-':
+                result.append(int(spec[i]))
+                i += 1
+        else:
+            result.append(int(spec[i]))
+            i += 1
+    return result
+```",
+73,coding,hard,Write a Python function `nest_by_dots(flat)` that converts a dictionary with dot,```python def nest_by_dots(flat):     def _parse_key(key):         parts = key.s,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1204.887878964655,1135.3774910094216,87.14503800156507,50.20356705268433,1209,2346,stop,"```python
+def nest_by_dots(flat):
+    def _parse_key(key):
+        parts = key.split('.')
+        return {parts[i]: _parse_key(parts[i+1]) for i in range(len(parts)-1)}
+    
+    return _parse_key(flat)
+```",
+74,coding,hard,"Write a Python function `interval_gaps(intervals, start, end)` where `intervals`","```python def interval_gaps(intervals, start, end):     # Sort intervals by thei",0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,1526.977447909303,3897.807545028627,87.7550615979753,52.593669038755586,1535,5411,stop,"```python
+def interval_gaps(intervals, start, end):
+    # Sort intervals by their start time
+    intervals.sort(key=lambda x: x[0])
+    
+    # Initialize result list
+    result = []
+    
+    # Check if intervals are empty
+    if not intervals:
+        return []
+    
+    # Check if intervals overlap with the start and end
+    for interval in intervals:
+        a, b = interval
+        if a < start:
+            result.append([start, a])
+        elif b > end:
+            result.append([b, end])
+        else:
+            # Merge overlapping intervals
+            if result and result[-1][1] >= a:
+                result[-1][1] = b
+            else:
+                result.append([a, b])
+    
+    # Check if the result is empty
+    if not result:
+        return []
+    
+    # Sort the result by their start time
+    result.sort(key=lambda x: x[0])
+    
+    return result
+```",
+75,history,easy,Which empire built Machu Picchu? Answer in one or two words.,Inca.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,523.271705955267,119.1502419533208,85.99738814054457,25.178295493309218,530,645,stop,Inca.,
+76,history,easy,What structure's fall in 1989 became a symbol of the end of the division between,Fall of the Wall,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,711.9564639870077,142.96934206504375,87.08397652968205,27.97802621334163,719,862,stop,Fall of the Wall,
+77,history,medium,What document signed in 1215 is famous for limiting the power of the English kin,Act of Union,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,655.8465170674026,114.35430403798819,86.91057818660643,26.23425524065459,663,779,stop,Act of Union,
+78,history,medium,Which Roman emperor established Constantinople as an imperial capital? Answer wi,Constantinople was established as an imperial capital by Emperor Constantine the,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,553.9874479873106,384.7909210016951,86.64456238925375,41.5810226456188,561,949,stop,Constantinople was established as an imperial capital by Emperor Constantine the Great.,
+79,history,hard,Which treaty signed in 1713 helped end the War of the Spanish Succession? Answer,The Treaty of Paris signed in 1713 helped end the War of the Spanish Succession.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,644.1853689029813,708.6007579928264,86.9314993840445,47.98188488579658,651,1332,stop,The Treaty of Paris signed in 1713 helped end the War of the Spanish Succession. It ended the conflict and established the boundaries of the territories involved.,
+80,history,hard,Which Chinese dynasty began ruling after the fall of the Yuan dynasty in 1368? A,Ming,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,644.3066149950027,83.0930849770084,86.91514055064349,24.06939158118144,651,735,stop,Ming,
+81,logical_reasoning,easy,All metals conduct electricity. Copper is a metal. Can we conclude that copper c,Yes.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,622.4151980131865,83.43971101567149,86.75880693847704,23.969402286452834,631,715,stop,Yes.,
+82,logical_reasoning,easy,"What is the next number in the sequence: 1, 2, 4, 7, 11, ? Answer with just the ",The next number in the sequence is **13**.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,712.8588119521737,312.80488707125187,86.97374425408609,38.362571992894075,720,1033,stop,The next number in the sequence is **13**.,
+83,logical_reasoning,medium,No musicians dislike rhythm. Some drummers are musicians. Can we conclude that s,Yes.,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,678.5209700465202,82.2898029582575,86.95383430221013,24.304347903403347,685,768,stop,Yes.,
+84,logical_reasoning,medium,"Nadia, Omid, and Parisa each have exactly one different badge color: red, blue, ","Nadia=[red], Omid=[green], Parisa=[blue]",0.0000,0.0000,"[0, 0, 0]",0,0,1446.6157129500061,379.74961393047124,87.79111056454356,39.49971099311339,1454,1828,stop,"Nadia=[red], Omid=[green], Parisa=[blue]",
+85,logical_reasoning,hard,"Ari, Bina, Cyrus, and Darya finish a race in positions 1 through 4, with no ties","Ari, Bina, Cyrus, Darya",0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,1333.938382100314,285.3947909316048,87.71019828950499,35.03918192535095,1340,1617,stop,"Ari, Bina, Cyrus, Darya",
+86,logical_reasoning,hard,"Four cards labeled A, B, C, and D are placed in a row from left to right. Clues:","To solve this puzzle, we need to determine the order of the four cards A, B, C, ",0.2500,0.0000,"[0.25, 0.25, 0.25]",0,0,1265.8089599572122,9623.809406999499,87.69095772852809,53.201386098483724,1272,10927,length,"To solve this puzzle, we need to determine the order of the four cards A, B, C, and D in a row, given the following clues:
+
+1. **A is somewhere to the left of C.**  
+   This means A must be in a position before C.
+
+2. **B is immediately to the right of D.**  
+   This means B is directly after D.
+
+3. **C is not at either end.**  
+   So C cannot be in the first or last position.
+
+4. **A is not adjacent to D.**  
+   A and D cannot be next to each other.
+
+Let’s analyze the possibilities step by step.
+
+### Step 1: Understand the constraints
+
+- Clue 2: B is immediately to the right of D → D must be in a position before B.
+- Clue 4: A is not adjacent to D → A and D cannot be next to each other.
+- Clue 3: C is not at either end → C can be in positions 2 or 3.
+
+### Step 2: Try possible arrangements
+
+Let’s consider all possible permutations of A, B, C, D and check which ones satisfy all the constraints.
+
+#### Try: A, B, C, D  
+- Clue 1: A is to the left of C → ��  
+- Clue 2: B is immediately to the right of D → D is in position 3, B in position 4 → �� (invalid, since B is not to the right of D)  
+→ **Invalid**
+
+#### Try: A, D, B, C  
+- Clue 1: A is to the left of C → ��  
+- Clue 2: B is immediately to the right of D → D is in position 2, B in position 3 → ��  
+- Clue 3: C is not at either end → C is in position 3 → ��  
+- Clue 4: A is not adjacent to D → A is in position 1, D in position 2 → �� (adjacent)  
+→ **Invalid**
+
+#### Try: B, D, A, C  
+- Clue 1: A is to the left of C → ��  
+- Clue 2: B is immediately to the right of D → D is in position 2, B in position 3 → ��  
+- Clue 3: C is not",
+87,language_understanding,easy,"Which meaning of the word ""meticulous"" fits this sentence best? ""The archivist k",A) Careful,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,892.8982330253348,142.6628790795803,87.35597979146954,28.038127548012802,900,1046,stop,A) Careful,
+88,language_understanding,easy,"What is the tone of this sentence? ""Wonderful—another software update right befo",Grateful.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,746.9158000312746,114.93449995759875,87.02453475649912,26.10182322198078,755,871,stop,Grateful.,
+89,language_understanding,medium,"What does this sentence presuppose? ""Leila stopped commuting by car last month.""",The sentence presupposes that Leila had previously been commuting by car and tha,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,610.6572679709643,492.11795802693814,86.79172881394422,44.70472910235829,620,1109,stop,The sentence presupposes that Leila had previously been commuting by car and that she stopped doing so last month.,
+90,language_understanding,medium,"Read the two statements: Statement 1: ""Every lamp in the hallway was switched of",Contradiction,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1018.8904099632055,118.20358398836106,87.3499241230605,25.379941104792522,1027,1144,stop,Contradiction,
+91,language_understanding,hard,"A hiring manager asks, ""Would Samira be good in a client-facing role?"" You reply",I'm implying that Samira's attention to detail and precision in reports make her,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,780.8340420015156,837.1875840239227,87.08636706680369,47.779017227824774,787,1615,stop,"I'm implying that Samira's attention to detail and precision in reports make her a strong candidate for a client-facing role, as she can effectively communicate and present information in a professional and polished manner.",
+92,language_understanding,hard,"In the sentence ""Even Farid passed the qualifying exam,"" what does the word ""eve","The word ""even"" implies that Farid was not the only one who passed the qualifyin",0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,678.4133809851483,627.3817750625312,86.9676242445631,46.22384830529954,685,1310,stop,"The word ""even"" implies that Farid was not the only one who passed the qualifying exam, suggesting that there were others who also succeeded.",
+93,persian,easy,متضادِ «کوتاه» چیست؟ فقط یک کلمه بنویسید.,«کوتاه» مخالفتی است که به معنای «کوتاه» است.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,656.3279540278018,519.0402730368078,86.84682657533966,44.31255375508974,662,1181,stop,«کوتاه» مخالفتی است که به معنای «کوتاه» است.,
+94,persian,easy,جملهٔ «The window is open.» را به فارسی ترجمه کنید.,جیانه: «جیانه» را به فارسی ترجمه کنید.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,633.4940470987931,552.2873649606481,86.8200739247401,45.26628995356668,640,1189,stop,جیانه: «جیانه» را به فارسی ترجمه کنید.,
+95,persian,medium,در جملهٔ «کتابِ جدیدِ معلم روی میز است»، واژهٔ «روی» چه نقشی دارد؟ فقط نام نقش ر,واژه�� «روی» در جمله�� «کتابِ جدیدِ معلم روی میز است» نقشی از نام نقش دارد.,0.0000,0.0000,"[0.0, 0.0, 0.0]",0,0,972.182659083046,900.4453900270164,87.43212934920197,48.86470682989432,978,1883,stop,واژه�� «روی» در جمله�� «کتابِ جدیدِ معلم روی میز است» نقشی از نام نقش دارد.,
+96,persian,medium,معنیِ اصطلاحِ «آب از سرش گذشته» چیست؟ کوتاه توضیح دهید.,«آب از سرش گذشته» یک اصطلاح است که به این معنا است که چیزی که در آن از سرکوب یا ,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,769.8755459859967,4054.1369839338586,87.0270530728335,53.27891012464219,776,4830,stop,«آب از سرش گذشته» یک اصطلاح است که به این معنا است که چیزی که در آن از سرکوب یا توقف گذشته است، به عنوان یک مانع یا مانع از ادامه ادامه می‌دهد. مثلاً، اگر یک فرد در یک مکان بازگشت کند و آب از سرکوب گذشته است، آن آب ممکن است به چالش برسد یا به چالش برسد. اصطلاح اغلب به این معنا است که چیزی که از سرکوب گذشته است، مانع از ادامه عملیات یا اقدامات می‌شود.,
+97,persian,hard,مفهومِ این بیت چیست؟ «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز,این بیت به معنای «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز» اس,1.0000,0.0000,"[1.0, 1.0, 1.0]",0,0,1040.4126610374078,3770.1433110050857,87.46529469303346,52.78313941518272,1046,4808,stop,این بیت به معنای «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز» است که به معنای «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز» است. این یک ترکیب از دو جمله است که به معنای «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز» است. این بیت به معنای «تو نیکی می‌کن و در دجله انداز / که ایزد در بیابانت دهد باز» است.,
+98,persian,hard,در جملهٔ «اگر زودتر خبر می‌داد، می‌آمدم» گوینده چه چیزی را بیان می‌کند؟ کوتاه تو,گوینده در جمله «اگر زودتر خبر می‌داد، می‌آمدم» به این چیزی بیان می‌کند که **باید,0.5000,0.0000,"[0.5, 0.5, 0.5]",0,0,1051.065374049358,3179.8490629298612,87.53023576978731,52.51821602064625,1057,4213,stop,گوینده در جمله «اگر زودتر خبر می‌داد، می‌آمدم» به این چیزی بیان می‌کند که **باید به‌طور سریع‌تر اطلاعات را ارائه دهد** و **در صورتی که اطلاعات را بگیرد، به‌طور سریع‌تر از آن‌ها را انجام دهد**. این گفتگوی به اهمیت **تایید و انتقال اطلاعات به‌طور سریع** در مورد موضوع مطرح می‌پردازد.,

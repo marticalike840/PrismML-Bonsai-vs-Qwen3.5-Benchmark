@@ -1,0 +1,4 @@
+model,params_b,quant,overall_score,general_knowledge,math,coding,history,logical_reasoning,language_understanding,persian,avg_gen_tok_s,avg_prompt_tok_s,avg_ttft_ms,vram_mb,total_wall_time_s
+Ternary-Bonsai-8B,8.19,mlx-2bit,0.8495,1.0000,0.7857,0.9286,0.9821,0.7143,0.9643,0.5714,15.0,20.5,3414,,713.8
+Ternary-Bonsai-4B,4.02,mlx-2bit,0.8301,1.0000,0.7857,0.9107,1.0000,0.6857,0.8929,0.5357,23.9,37.9,1847,,470.2
+Ternary-Bonsai-1.7B,1.72,mlx-2bit,0.6512,1.0000,0.6429,0.5595,0.6786,0.3917,0.7857,0.5000,41.0,87.0,807,,189.0

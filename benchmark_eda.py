@@ -40,8 +40,11 @@ MODEL_CSVS = {
     "Qwen3.5-27B": "benchmark_qwen3.5-27b_20260401_091717.csv",
     "Qwen3.5-9B": "benchmark_qwen3.5-9b_20260401_091717.csv",
     "Bonsai-8B": "benchmark_bonsai-8b_20260401_091717.csv",
+    "Ternary-Bonsai-8B": "benchmark_ternary-bonsai-8b_20260417_181007.csv",
     "Qwen3.5-4B": "benchmark_qwen3.5-4b_20260401_091717.csv",
+    "Ternary-Bonsai-4B": "benchmark_ternary-bonsai-4b_20260417_181007.csv",
     "Qwen3.5-2B": "benchmark_qwen3.5-2b_20260401_214409.csv",
+    "Ternary-Bonsai-1.7B": "benchmark_ternary-bonsai-1.7b_20260417_181007.csv",
     "Qwen3.5-0.8B": "benchmark_qwen3.5-0.8b_20260401_214409.csv",
 }
 
@@ -51,13 +54,18 @@ MODEL_COLORS = {
     "Qwen3.5-27B": "#4361ee",
     "Qwen3.5-9B": "#7209b7",
     "Bonsai-8B": "#fb8500",
+    "Ternary-Bonsai-8B": "#d62828",
     "Qwen3.5-4B": "#f72585",
+    "Ternary-Bonsai-4B": "#ffba08",
     "Qwen3.5-2B": "#3a86ff",
+    "Ternary-Bonsai-1.7B": "#2a9d8f",
     "Qwen3.5-0.8B": "#ef476f",
 }
 MODEL_ORDER = [
-    "Qwen3.5-35B-A3B", "Qwen3.5-27B", "Qwen3.5-9B", "Bonsai-8B",
-    "Qwen3.5-4B", "Qwen3.5-2B", "Qwen3.5-0.8B",
+    "Qwen3.5-35B-A3B", "Qwen3.5-27B", "Qwen3.5-9B",
+    "Bonsai-8B", "Ternary-Bonsai-8B",
+    "Qwen3.5-4B", "Ternary-Bonsai-4B",
+    "Qwen3.5-2B", "Ternary-Bonsai-1.7B", "Qwen3.5-0.8B",
 ]
 
 CATEGORY_LABELS = {
@@ -73,14 +81,17 @@ CATEGORY_ORDER = list(CATEGORY_LABELS.keys())
 
 DIFFICULTY_ORDER = ["easy", "medium", "hard"]
 
-# Weight file sizes in GiB (from llama-server model loads)
+# Weight file sizes in GiB (from model.safetensors / gguf on disk)
 MODEL_WEIGHT_GIB = {
     "Qwen3.5-35B-A3B": 20.5,
     "Qwen3.5-27B": 15.6,
     "Qwen3.5-9B": 5.3,
     "Bonsai-8B": 1.1,
+    "Ternary-Bonsai-8B": 2.145,
     "Qwen3.5-4B": 2.6,
+    "Ternary-Bonsai-4B": 1.054,
     "Qwen3.5-2B": 1.2,
+    "Ternary-Bonsai-1.7B": 0.451,
     "Qwen3.5-0.8B": 0.473,
 }
 

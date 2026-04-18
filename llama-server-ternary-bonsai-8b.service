@@ -1,0 +1,28 @@
+[Unit]
+Description=MLX CUDA server — Ternary-Bonsai-8B-mlx-2bit
+After=network.target
+
+[Service]
+Type=simple
+User=arman
+WorkingDirectory=/home/arman/ai/test-mlx-on-cuda
+
+Environment=PYTHONUNBUFFERED=1
+Environment=MLX_CUDA_USE_CUDNN_SDPA=0
+Environment=LD_LIBRARY_PATH=/home/arman/ai/test-mlx-on-cuda/.venv/lib/python3.10/site-packages/nvidia/cudnn/lib
+Environment=CUDA_HOME=/usr/local/cuda
+
+ExecStart=/home/arman/ai/test-mlx-on-cuda/.venv/bin/python \
+    /home/arman/ai/test-mlx-on-cuda/mlx_openai_server.py \
+    --model /home/arman/ai/test-mlx-on-cuda/models/Ternary-Bonsai-8B-mlx-2bit \
+    --model-name default \
+    --host 127.0.0.1 \
+    --port 8001
+
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
