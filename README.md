@@ -232,3 +232,19 @@ The three `mlx-2bit` Ternary-Bonsai models are served by `~/ai/test-mlx-on-cuda/
 ## Author
 
 Arman Jafarnezhad w/ Claude Opus 4.6 Max Effort · Ternary-Bonsai MLX-CUDA run: Claude Opus 4.7 (1M)
+
+## Citation
+
+If you use this benchmark or build on its results, please cite it:
+
+```bibtex
+@software{jafarnezhad_bonsai_vs_qwen_2026,
+  author  = {Jafarnezhad, Arman},
+  title   = {Bonsai vs Qwen3.5 on Edge: Benchmarking Aggressively Quantized LLMs on NVIDIA Jetson Orin},
+  year    = {2026},
+  url     = {https://github.com/ArmanJR/PrismML-Bonsai-vs-Qwen3.5-Benchmark},
+  version = {2026.04.17}
+}
+```
+
+A [`CITATION.cff`](CITATION.cff) file is included so GitHub can render a "Cite this repository" button directly on the repo page.

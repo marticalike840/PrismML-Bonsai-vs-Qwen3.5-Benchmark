@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or build on its results, please cite it as below."
+title: "Bonsai vs Qwen3.5 on Edge: Benchmarking Aggressively Quantized LLMs on NVIDIA Jetson Orin"
+abstract: >
+  A practical benchmark comparing the Bonsai 1-bit LLM, the Ternary-Bonsai
+  mlx-2bit family (1.7B / 4B / 8B), and seven Qwen3.5 variants (0.8B–35B)
+  on an NVIDIA Jetson Orin. Covers accuracy across 98 questions in 7
+  categories (general knowledge, math, coding, history, logical reasoning,
+  language understanding, Persian) and throughput (generation and prompt
+  tok/s) via llama.cpp and a source-built MLX CUDA backend (sm_87).
+type: software
+authors:
+  - family-names: Jafarnezhad
+    given-names: Arman
+    alias: ArmanJR
+repository-code: "https://github.com/ArmanJR/PrismML-Bonsai-vs-Qwen3.5-Benchmark"
+url: "https://github.com/ArmanJR/PrismML-Bonsai-vs-Qwen3.5-Benchmark"
+keywords:
+  - LLM
+  - benchmark
+  - quantization
+  - 1-bit
+  - ternary
+  - MLX
+  - llama.cpp
+  - Jetson Orin
+  - edge AI
+  - Bonsai
+  - Qwen
+date-released: "2026-04-17"
+version: "2026.04.17"
